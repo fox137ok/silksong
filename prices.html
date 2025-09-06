@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>价格比较 - 空洞骑士：丝之歌最低价购买指南 | Silksong Hub</title>
+  <meta name="description" content="对比空洞骑士：丝之歌在Steam、Nintendo eShop、PlayStation Store、Xbox Store等平台的价格。找到全球最低价，节省购买成本。">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://silksonghub.com/prices.html">
+  <meta property="og:title" content="价格比较 - 空洞骑士：丝之歌最低价购买指南">
+  <meta property="og:description" content="对比空洞骑士：丝之歌在各大游戏平台的价格。找到全球最低价，节省购买成本。">
+  <meta property="og:image" content="https://silksonghub.com/assets/img/hero.webp">
+  <meta property="og:locale" content="zh_CN">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://silksonghub.com/prices.html">
+  <meta property="twitter:title" content="价格比较 - 空洞骑士：丝之歌最低价购买指南">
+  <meta property="twitter:description" content="对比空洞骑士：丝之歌在各大游戏平台的价格。找到全球最低价，节省购买成本。">
+  <meta property="twitter:image" content="https://silksonghub.com/assets/img/hero.webp">
+  
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "空洞骑士：丝之歌价格比较",
+    "description": "比较不同平台和地区的游戏价格，找到最优购买方案",
+    "url": "https://silksonghub.com/prices.html",
+    "mainEntity": {
+      "@type": "VideoGame",
+      "name": "Hollow Knight: Silksong",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "19.99",
+        "highPrice": "19.99",
+        "availability": "https://schema.org/PreOrder"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://silksonghub.com"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "价格比较",
+        "item": "https://silksonghub.com/prices.html"
+      }]
+    }
+  }
+  </script>
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/img/logo.svg">
+  <link rel="alternate icon" href="./favicon.ico">
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/css/style.css" as="style">
+  <link rel="preload" href="./assets/js/header.js" as="script">
+  <link rel="preload" href="./assets/js/prices.js" as="script">
+  <link rel="preload" href="./data/prices.json" as="fetch" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- Header将由JavaScript动态插入 -->
+  
+  <main role="main">
+    <!-- 页面标题区域 -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center">
+          <h1>价格比较</h1>
+          <p class="hero-subtitle">
+            对比各大平台价格，找到空洞骑士：丝之歌的最优购买方案
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 价格提醒 -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem; background: rgba(217, 76, 131, 0.1);">
+      <div class="container">
+        <div class="text-center">
+          <p style="color: var(--accent); margin-bottom: 0;">
+            ⚠️ <strong>注意：</strong>游戏尚未发售，以下价格为预期价格，实际价格请以各平台发布为准。
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 价格控制器 -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+      <div class="container">
+        <div class="price-controls">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <label for="region-selector" style="font-weight: 600; color: var(--text);">
+              选择地区：
+            </label>
+            <select id="region-selector" aria-label="选择价格地区">
+              <option value="US" selected>美国 (USD)</option>
+              <!-- 其他选项将由JavaScript动态生成 -->
+            </select>
+          </div>
+        </div>
+        
+        <!-- 购买建议 -->
+        <div class="text-center mt-2" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border);">
+          <h3 style="color: var(--accent); margin-bottom: 1rem;">💡 省钱小贴士</h3>
+          <div class="grid grid-2" style="text-align: left; gap: 1rem;">
+            <div>
+              <h4 style="margin-bottom: 0.5rem;">地区价格差异</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                不同地区的定价策略不同，Steam 通常提供地区化定价，可能存在较大价格差异。
+              </p>
+            </div>
+            <div>
+              <h4 style="margin-bottom: 0.5rem;">平台特色</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                Steam 支持退款政策，Switch 版本支持便携模式，PlayStation 和 Xbox 有会员折扣。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 价格表格 -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <div class="table-container" style="overflow-x: auto;">
+          <table id="price-table" role="table" aria-label="各平台价格比较">
+            <thead>
+              <tr>
+                <th scope="col">地区</th>
+                <th scope="col">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/steam/steam-original.svg" 
+                         alt="" width="20" height="20" style="filter: brightness(0) invert(1);">
+                    Steam
+                  </div>
+                </th>
+                <th scope="col">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    🎮 Nintendo eShop
+                  </div>
+                </th>
+                <th scope="col">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    🎯 PlayStation
+                  </div>
+                </th>
+                <th scope="col">
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    🎮 Xbox
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 价格数据将由JavaScript动态加载 -->
+              <tr>
+                <td colspan="5" class="text-center">
+                  <span class="loading" aria-label="加载中"></span>
+                  <span style="margin-left: 0.5rem;">正在加载价格数据...</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- 价格说明 -->
+        <div class="mt-2" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border);">
+          <h3 style="margin-bottom: 1rem;">📋 价格说明</h3>
+          <div class="grid grid-2" style="gap: 1rem;">
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">最低价标识</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                表格中标记为 <span style="color: var(--accent); font-weight: 600;">粉色</span> 的价格为当前地区的最低价格。
+              </p>
+              
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">汇率说明</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                价格为各平台的本地货币标价，实际汇率转换价格可能有所差异。
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">购买须知</h4>
+              <ul style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                <li>部分地区可能有地区锁定限制</li>
+                <li>Steam 支持 VPN 购买，但需遵守平台规则</li>
+                <li>建议关注各平台的促销活动</li>
+                <li>预购可能享有早鸟优惠</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 购买指南 -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <h2 class="text-center mb-2">购买指南</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>🔍 如何找到最低价</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>对比上表中不同地区的价格</li>
+              <li>考虑汇率和支付手续费</li>
+              <li>关注各平台的季度促销</li>
+              <li>加入愿望清单接收降价通知</li>
+            </ol>
+          </div>
+          
+          <div class="card">
+            <h3>⚡ 抢先购买技巧</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>关注官方社交媒体发售消息</li>
+              <li>设置价格监控和库存提醒</li>
+              <li>预先准备好各平台账户</li>
+              <li>了解各平台的预购政策</li>
+            </ol>
+          </div>
+          
+          <div class="card">
+            <h3>💳 支付注意事项</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>确认支付方式支持该地区</li>
+              <li>注意汇率波动影响</li>
+              <li>了解退款和换区政策</li>
+              <li>保存购买凭证和收据</li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="text-center mt-2">
+          <a href="news.html" class="cta-button">
+            关注发售动态
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 常见问题 -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">常见问题</h2>
+        <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">Q: 游戏何时发售？</h3>
+            <p style="margin-bottom: 0;">A: Team Cherry 尚未公布具体发售日期，请关注官方消息和本站新闻更新。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">Q: 不同平台版本有区别吗？</h3>
+            <p style="margin-bottom: 0;">A: 核心游戏内容相同，但各平台可能在成就系统、云存档、手柄支持等方面有差异。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">Q: 是否支持跨平台存档？</h3>
+            <p style="margin-bottom: 0;">A: 官方尚未确认跨平台存档功能，建议选择主要游戏平台购买。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">Q: 预购有什么优势？</h3>
+            <p style="margin-bottom: 0;">A: 预购可能享有早鸟价格优惠，以及预载、独家内容等福利，具体以各平台公布为准。</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer将由JavaScript动态插入 -->
+  
+  <!-- 脚本 -->
+  <script src="./assets/js/header.js" defer></script>
+  <script src="./assets/js/prices.js" defer></script>
+</body>
+</html>

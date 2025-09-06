@@ -1,0 +1,242 @@
+[
+  {
+    "region": "US",
+    "currency": "$",
+    "steam": {
+      "price": 19.99,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 19.99,
+      "url": "https://www.nintendo.com/us/store/products/hollow-knight-silksong-switch/"
+    },
+    "ps": {
+      "price": 19.99,
+      "url": "https://store.playstation.com/en-us/product/UP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 19.99,
+      "url": "https://www.xbox.com/en-us/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "CN",
+    "currency": "¥",
+    "steam": {
+      "price": 68.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 138.00,
+      "url": "https://www.nintendo.com/hk/software/switch/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 138.00,
+      "url": "https://store.playstation.com/zh-hant-hk/product/HP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 138.00,
+      "url": "https://www.xbox.com/zh-hk/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "EU",
+    "currency": "€",
+    "steam": {
+      "price": 17.99,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 19.99,
+      "url": "https://www.nintendo.com/eu/Games/Nintendo-Switch-download-software/Hollow-Knight-Silksong-1825615.html"
+    },
+    "ps": {
+      "price": 19.99,
+      "url": "https://store.playstation.com/en-gb/product/EP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 19.99,
+      "url": "https://www.xbox.com/en-gb/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "UK",
+    "currency": "£",
+    "steam": {
+      "price": 15.99,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 17.99,
+      "url": "https://www.nintendo.com/gb/Games/Nintendo-Switch-download-software/Hollow-Knight-Silksong-1825615.html"
+    },
+    "ps": {
+      "price": 17.99,
+      "url": "https://store.playstation.com/en-gb/product/EP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 17.99,
+      "url": "https://www.xbox.com/en-gb/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "JP",
+    "currency": "¥",
+    "steam": {
+      "price": 2200,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 2580,
+      "url": "https://store-jp.nintendo.com/list/software/70010000027510.html"
+    },
+    "ps": {
+      "price": 2580,
+      "url": "https://store.playstation.com/ja-jp/product/JP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 2580,
+      "url": "https://www.xbox.com/ja-jp/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "AR",
+    "currency": "$",
+    "steam": {
+      "price": 299.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 999.00,
+      "url": "https://www.nintendo.com/ar/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 999.00,
+      "url": "https://store.playstation.com/es-ar/product/UP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 999.00,
+      "url": "https://www.xbox.com/es-ar/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "TR",
+    "currency": "₺",
+    "steam": {
+      "price": 149.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 399.00,
+      "url": "https://www.nintendo.com/tr/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 399.00,
+      "url": "https://store.playstation.com/tr-tr/product/EP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 399.00,
+      "url": "https://www.xbox.com/tr-tr/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "BR",
+    "currency": "R$",
+    "steam": {
+      "price": 37.99,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 79.90,
+      "url": "https://www.nintendo.com/br/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 79.90,
+      "url": "https://store.playstation.com/pt-br/product/UP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 79.90,
+      "url": "https://www.xbox.com/pt-br/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "RU",
+    "currency": "₽",
+    "steam": {
+      "price": 799.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 1299.00,
+      "url": "https://www.nintendo.com/ru/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 1299.00,
+      "url": "https://store.playstation.com/ru-ru/product/EP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 1299.00,
+      "url": "https://www.xbox.com/ru-ru/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "MX",
+    "currency": "$",
+    "steam": {
+      "price": 199.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 379.00,
+      "url": "https://www.nintendo.com/mx/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 379.00,
+      "url": "https://store.playstation.com/es-mx/product/UP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 379.00,
+      "url": "https://www.xbox.com/es-mx/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "IN",
+    "currency": "₹",
+    "steam": {
+      "price": 549.00,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 1299.00,
+      "url": "https://www.nintendo.com/in/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 1299.00,
+      "url": "https://store.playstation.com/en-in/product/EP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 1299.00,
+      "url": "https://www.xbox.com/en-in/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  },
+  {
+    "region": "KR",
+    "currency": "₩",
+    "steam": {
+      "price": 22000,
+      "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
+    },
+    "eshop": {
+      "price": 26800,
+      "url": "https://www.nintendo.co.kr/games/hollow-knight-silksong/"
+    },
+    "ps": {
+      "price": 26800,
+      "url": "https://store.playstation.com/ko-kr/product/HP2200-CUSA13632_00-HOLLOWKNIGHT0000"
+    },
+    "xbox": {
+      "price": 26800,
+      "url": "https://www.xbox.com/ko-kr/games/store/hollow-knight-silksong/9N2L8PXZX2N5"
+    }
+  }
+]
