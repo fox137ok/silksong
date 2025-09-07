@@ -1,17 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://silksonghub.com/sitemap.xml
-
-# Block common bot directories (optional)
-Disallow: /assets/
-Disallow: /data/
-
-# Allow important resources
-Allow: /assets/img/
-Allow: /assets/css/
-Allow: /assets/js/
-
-# Crawl delay (optional - be respectful to servers)
-Crawl-delay: 1

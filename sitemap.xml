@@ -2,78 +2,124 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Homepage - Chinese (Default) -->
+  <!-- Homepage - English (Default) -->
   <url>
     <loc>https://silksonghub.com/</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/"/>
   </url>
   
-  <!-- Homepage - English -->
+  <!-- Homepage - Chinese -->
   <url>
-    <loc>https://silksonghub.com/en/</loc>
+    <loc>https://silksonghub.com/zh/</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/"/>
   </url>
   
-  <!-- Prices Page - Chinese -->
+  <!-- Prices Page - English -->
   <url>
     <loc>https://silksonghub.com/prices.html</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/prices/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/prices/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/prices.html"/>
   </url>
   
-  <!-- Prices Page - English -->
+  <!-- Prices Page - Chinese -->
   <url>
-    <loc>https://silksonghub.com/en/prices/</loc>
+    <loc>https://silksonghub.com/zh/prices/</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/prices/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/prices/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/prices.html"/>
   </url>
   
-  <!-- Map Page - Chinese -->
+  <!-- Map Page - English -->
   <url>
     <loc>https://silksonghub.com/map.html</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/map/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/map/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/map.html"/>
   </url>
   
-  <!-- Map Page - English -->
+  <!-- Map Page - Chinese -->
   <url>
-    <loc>https://silksonghub.com/en/map/</loc>
+    <loc>https://silksonghub.com/zh/map/</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/map/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/map/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/map.html"/>
   </url>
   
-  <!-- News Page -->
+  <!-- News List - English -->
   <url>
-    <loc>https://silksonghub.com/news.html</loc>
+    <loc>https://silksonghub.com/news/</loc>
     <lastmod>2025-01-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/"/>
+  </url>
+  
+  <!-- News List - Chinese -->
+  <url>
+    <loc>https://silksonghub.com/zh/news/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/"/>
+  </url>
+  
+  <!-- News Articles (English/Chinese pairs) -->
+  <url>
+    <loc>https://silksonghub.com/news/2024/12/team-cherry-progress-update/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/2024/12/team-cherry-progress-update/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/2024/12/team-cherry-progress-update/"/>
+  </url>
+  <url>
+    <loc>https://silksonghub.com/zh/news/2024/12/team-cherry-progress-update/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/2024/12/team-cherry-progress-update/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/2024/12/team-cherry-progress-update/"/>
+  </url>
+  <url>
+    <loc>https://silksonghub.com/news/2024/12/gameplay-demo/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/2024/12/gameplay-demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/2024/12/gameplay-demo/"/>
+  </url>
+  <url>
+    <loc>https://silksonghub.com/zh/news/2024/12/gameplay-demo/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/news/2024/12/gameplay-demo/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/news/2024/12/gameplay-demo/"/>
   </url>
   
   <!-- Media Page -->

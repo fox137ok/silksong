@@ -16,8 +16,8 @@
   <link rel="canonical" href="https://silksonghub.com/prices.html">
   
   <!-- 语言切换链接 -->
-  <link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/prices.html">
-  <link rel="alternate" hreflang="en" href="https://silksonghub.com/prices.html?lang=en">
+  <link rel="alternate" hreflang="en" href="https://silksonghub.com/prices.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/prices/">
   <link rel="alternate" hreflang="x-default" href="https://silksonghub.com/prices.html">
   
   <!-- Open Graph / Facebook -->
@@ -104,7 +104,7 @@
   
   <!-- 预加载关键资源 -->
   <link rel="preload" href="./assets/css/style.css" as="style">
-  <link rel="preload" href="./assets/js/header.js" as="script">
+  
   <link rel="preload" href="./assets/js/prices.js" as="script">
   <link rel="preload" href="./data/prices.json" as="fetch" crossorigin="anonymous">
 </head>
@@ -158,9 +158,9 @@
         </div>
         
         <!-- Buying Tips -->
-        <div class="text-center mt-2" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border);">
-          <h3 data-zh="💡 Steam购买小贴士" data-en="💡 Steam Buying Tips" style="color: var(--accent); margin-bottom: 1rem;">💡 Steam Buying Tips</h3>
-          <div class="grid grid-2" style="text-align: left; gap: 1rem;">
+        <div class="text-center mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <h3 data-zh="💡 Steam购买小贴士" data-en="💡 Steam Buying Tips" style="color: var(--accent); margin-bottom: 1.5rem;">💡 Steam Buying Tips</h3>
+          <div class="grid grid-2" style="text-align: left; gap: 2rem;">
             <div>
               <h4 data-zh="地区价格差异" data-en="Regional Price Differences" style="margin-bottom: 0.5rem;">Regional Price Differences</h4>
               <p data-zh="Steam各地区价格差异明显，阿根廷、土耳其、俄罗斯等地区价格较低，最高可节省超过50%。" data-en="Steam regional prices vary significantly. Argentina, Turkey, and Russia offer lower prices, potentially saving you over 50%." style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
@@ -220,7 +220,7 @@
               <tr>
                 <td colspan="5" class="text-center">
                   <span class="loading" aria-label="加载中"></span>
-                  <span style="margin-left: 0.5rem;">Loading price data...</span>
+                  <span style="margin-left: 0.5rem;" data-zh="正在加载价格数据..." data-en="Loading price data...">正在加载价格数据...</span>
                 </td>
               </tr>
             </tbody>
@@ -228,27 +228,27 @@
         </div>
         
         <!-- 价格说明 -->
-        <div class="mt-2" style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border);">
-          <h3 style="margin-bottom: 1rem;">📋 Price Description</h3>
-          <div class="grid grid-2" style="gap: 1rem;">
+        <div class="mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <h3 style="margin-bottom: 1.5rem; text-align: center;" data-zh="📋 价格说明" data-en="📋 Price Description">📋 价格说明</h3>
+          <div class="grid grid-2" style="gap: 2rem;">
             <div>
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Best Price Indicator</h4>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
-                Prices marked in <span style="color: var(--accent); font-weight: 600;">pink</span> are the best deals, with savings calculated based on the US price of $19.99.
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="最优价格标识" data-en="Best Price Indicator">最优价格标识</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;" data-zh="标记为粉色的价格是最优惠的价格，节省金额基于美国价格$19.99计算。" data-en="Prices marked in pink are the best deals, with savings calculated based on the US price of $19.99.">
+                标记为<span style="color: var(--accent); font-weight: 600;">粉色</span>的价格是最优惠的价格，节省金额基于美国价格$19.99计算。
               </p>
               
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Exchange Rate Notes</h4>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-                USD equivalent prices are calculated based on real-time exchange rates, which may fluctuate.
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="汇率说明" data-en="Exchange Rate Notes">汇率说明</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;" data-zh="美元等价价格基于实时汇率计算，可能会有波动。" data-en="USD equivalent prices are calculated based on real-time exchange rates, which may fluctuate.">
+                美元等价价格基于实时汇率计算，可能会有波动。
               </p>
             </div>
             <div>
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Steam Purchase Notes</h4>
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="Steam购买须知" data-en="Steam Purchase Notes">Steam购买须知</h4>
               <ul style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-                <li>Some low-price regions may have regional lock restrictions</li>
-                <li>Follow Steam's terms of service when using VPN</li>
-                <li>Steam supports 2-hour refund policy for games under 2 hours playtime</li>
-                <li>Watch for Steam seasonal sales and special promotions</li>
+                <li data-zh="某些低价地区可能存在地区锁定限制" data-en="Some low-price regions may have regional lock restrictions">某些低价地区可能存在地区锁定限制</li>
+                <li data-zh="使用VPN时请遵守Steam的服务条款" data-en="Follow Steam's terms of service when using VPN">使用VPN时请遵守Steam的服务条款</li>
+                <li data-zh="Steam支持游戏时长不超过2小时的2小时退款政策" data-en="Steam supports 2-hour refund policy for games under 2 hours playtime">Steam支持游戏时长不超过2小时的2小时退款政策</li>
+                <li data-zh="关注Steam季节性促销和特别活动" data-en="Watch for Steam seasonal sales and special promotions">关注Steam季节性促销和特别活动</li>
               </ul>
             </div>
           </div>
@@ -259,35 +259,35 @@
     <!-- 购买指南 -->
     <section class="section" style="background: var(--bg-secondary);">
       <div class="container">
-        <h2 class="text-center mb-2">Steam Purchase Guide</h2>
+        <h2 class="text-center mb-2" data-zh="Steam购买指南" data-en="Steam Purchase Guide">Steam购买指南</h2>
         <div class="grid grid-3">
           <div class="card">
-            <h3>🔍 How to Find the Lowest Price</h3>
+            <h3 data-zh="🔍 如何找到最低价格" data-en="🔍 Find the Lowest Price">🔍 如何找到最低价格</h3>
             <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li>Check the best deals in the table above</li>
-              <li>Consider exchange rates and payment fees</li>
-              <li>Watch for Steam seasonal sales</li>
-              <li>Add to wishlist for price drop notifications</li>
+              <li data-zh="查看上方表格中的最优惠价格" data-en="Check the best deals in the table above">查看上方表格中的最优惠价格</li>
+              <li data-zh="考虑汇率和手续费" data-en="Consider exchange rates and payment fees">考虑汇率和手续费</li>
+              <li data-zh="关注Steam季节性促销" data-en="Watch for Steam seasonal sales">关注Steam季节性促销</li>
+              <li data-zh="加入愿望单以获取降价通知" data-en="Add to wishlist for price drop notifications">加入愿望单以获取降价通知</li>
             </ol>
           </div>
           
           <div class="card">
-            <h3>🌐 Regional Purchase Tips</h3>
+            <h3 data-zh="🌐 跨区购买技巧" data-en="🌐 Regional Purchase Tips">🌐 跨区购买技巧</h3>
             <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li>Choose reliable VPN service providers</li>
-              <li>Ensure payment methods support target regions</li>
-              <li>Understand regional locks and activation restrictions</li>
-              <li>Keep account secure, avoid frequent region changes</li>
+              <li data-zh="选择可靠的VPN服务提供商" data-en="Choose reliable VPN service providers">选择可靠的VPN服务提供商</li>
+              <li data-zh="确保支付方式支持目标地区" data-en="Ensure payment methods support target regions">确保支付方式支持目标地区</li>
+              <li data-zh="了解地区锁定和激活限制" data-en="Understand regional locks and activation restrictions">了解地区锁定和激活限制</li>
+              <li data-zh="保持账号安全，避免频繁更换地区" data-en="Keep account secure, avoid frequent region changes">保持账号安全，避免频繁更换地区</li>
             </ol>
           </div>
           
           <div class="card">
-            <h3>🛑 Purchase Considerations</h3>
+            <h3 data-zh="🛑 购买注意事项" data-en="🛑 Purchase Considerations">🛑 购买注意事项</h3>
             <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li>Verify game supports your language</li>
-              <li>Check system requirements</li>
-              <li>Understand Steam's refund policy</li>
-              <li>Save purchase records and receipts</li>
+              <li data-zh="验证游戏是否支持你的语言" data-en="Verify game supports your language">验证游戏是否支持你的语言</li>
+              <li data-zh="检查系统要求" data-en="Check system requirements">检查系统要求</li>
+              <li data-zh="了解Steam的退款政策" data-en="Understand Steam's refund policy">了解Steam的退款政策</li>
+              <li data-zh="保存购买记录和收据" data-en="Save purchase records and receipts">保存购买记录和收据</li>
             </ol>
           </div>
         </div>
@@ -303,27 +303,27 @@
     <!-- 常见问题 -->
     <section class="section">
       <div class="container">
-        <h2 class="text-center mb-2">Steam Purchase FAQ</h2>
+        <h2 class="text-center mb-2" data-zh="Steam购买常见问题" data-en="Steam Purchase FAQ">Steam购买常见问题</h2>
         <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);">Q: Why do prices vary so much between regions?</h3>
-            <p style="margin-bottom: 0;">A: Steam uses regional pricing strategies, setting different prices based on each region's economic level and purchasing power, resulting in significant price differences.</p>
+            <h3 style="color: var(--accent);" data-zh="问：为什么各地区价格差异如此之大？" data-en="Q: Why do prices vary so much between regions?">问：为什么各地区价格差异如此之大？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：Steam采用地区定价策略，根据各地区的经济水平和购买力设置不同价格，因此价格差异较大。" data-en="A: Steam uses regional pricing strategies, setting different prices based on each region's economic level and purchasing power, resulting in significant price differences.">答：Steam采用地区定价策略，根据各地区的经济水平和购买力设置不同价格，因此价格差异较大。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);">Q: Will using VPN for purchases result in account bans?</h3>
-            <p style="margin-bottom: 0;">A: Steam has some tolerance for VPN purchases, but frequent or malicious region changes may risk account bans. Use responsibly and follow relevant guidelines.</p>
+            <h3 style="color: var(--accent);" data-zh="问：使用VPN购买是否会导致封号？" data-en="Q: Will using VPN for purchases result in account bans?">问：使用VPN购买是否会导致封号？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：Steam对VPN购买有一定容忍度，但频繁或恶意更换地区可能有封号风险。请合理使用并遵守相关准则。" data-en="A: Steam has some tolerance for VPN purchases, but frequent or malicious region changes may risk account bans. Use responsibly and follow relevant guidelines.">答：Steam对VPN购买有一定容忍度，但频繁或恶意更换地区可能有封号风险。请合理使用并遵守相关准则。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);">Q: Do games from low-price regions have regional locks?</h3>
-            <p style="margin-bottom: 0;">A: Most Steam games don't have strict regional locks, but some games may have runtime restrictions. Check the game page's regional support information before purchasing.</p>
+            <h3 style="color: var(--accent);" data-zh="问：低价地区的游戏是否有地区锁？" data-en="Q: Do games from low-price regions have regional locks?">问：低价地区的游戏是否有地区锁？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：大部分Steam游戏没有严格的地区锁，但某些游戏可能有运行限制。购买前请查看游戏页面的地区支持信息。" data-en="A: Most Steam games don't have strict regional locks, but some games may have runtime restrictions. Check the game page's regional support information before purchasing.">答：大部分Steam游戏没有严格的地区锁，但某些游戏可能有运行限制。购买前请查看游戏页面的地区支持信息。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);">Q: How to choose the most suitable purchase region?</h3>
-            <p style="margin-bottom: 0;">A: Consider factors like price, payment convenience, regional locks, and risks comprehensively. For beginners, we recommend choosing relatively safe moderate-price regions.</p>
+            <h3 style="color: var(--accent);" data-zh="问：如何选择最合适的购买地区？" data-en="Q: How to choose the most suitable purchase region?">问：如何选择最合适的购买地区？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：综合考虑价格、支付便利性、地区锁、风险等因素。对于新手，建议选择相对安全的中等价格地区。" data-en="A: Consider factors like price, payment convenience, regional locks, and risks comprehensively. For beginners, we recommend choosing relatively safe moderate-price regions.">答：综合考虑价格、支付便利性、地区锁、风险等因素。对于新手，建议选择相对安全的中等价格地区。</p>
           </div>
           
         </div>
@@ -335,8 +335,8 @@
   <!-- Footer将由JavaScript动态插入 -->
   
   <!-- 脚本 -->
-  <script src="./assets/js/language.js"></script>
-  <script src="./assets/js/header.js"></script>
-  <script src="./assets/js/prices.js"></script>
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/header.js" defer></script>
+  <script src="./assets/js/prices.js" defer></script>
 </body>
 </html>

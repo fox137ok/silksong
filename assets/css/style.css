@@ -1381,6 +1381,21 @@ lite-youtube {
     margin: 0 0.5rem;
   }
   
+  /* 卡片响应式优化 */
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
   /* 页脚 */
   .footer-content {
     flex-direction: column;
@@ -1613,6 +1628,46 @@ lite-youtube {
   overflow: hidden;
 }
 
+/* 卡片样式 */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(217, 76, 131, 0.3);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card ol, .card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.card li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.card li:last-child {
+  margin-bottom: 0;
+}
+
 /* 网格布局类 */
 .grid {
   display: grid;
@@ -1624,7 +1679,7 @@ lite-youtube {
 }
 
 .grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 /* 通用类 */

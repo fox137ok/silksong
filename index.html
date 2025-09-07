@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- 多语言 Meta Tags -->
-  <title data-zh="Silksong Hub - 空洞骑士：丝之歌官方资讯与最低价购买指南" data-en="Silksong Hub - Hollow Knight: Silksong Official News & Best Price Guide">Silksong Hub - Hollow Knight: Silksong Official News & Best Price Guide</title>
+  <title data-zh="Silksong Hub - 空洞骑士：丝之歌最新资讯与最低价购买指南" data-en="Silksong Hub - Hollow Knight: Silksong Latest News & Best Price Guide">Silksong Hub - Hollow Knight: Silksong Latest News & Best Price Guide</title>
   
   <meta name="description" 
         data-zh="最权威的空洞骑士：丝之歌资讯站。获取最新游戏资讯、发售消息、最低价格购买指南，抢先体验Team Cherry的最新力作。"
@@ -16,17 +16,18 @@
   <link rel="canonical" href="https://silksonghub.com/">
   
   <!-- 语言切换链接 -->
-  <link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/">
-  <link rel="alternate" hreflang="en" href="https://silksonghub.com/?lang=en">
+  <link rel="alternate" hreflang="en" href="https://silksonghub.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/">
   <link rel="alternate" hreflang="x-default" href="https://silksonghub.com/">
   
   <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="Silksong Hub">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://silksonghub.com/">
   <meta property="og:title" 
-        data-zh="Silksong Hub - 空洞骑士：丝之歌官方资讯"
-        data-en="Silksong Hub - Hollow Knight: Silksong Official News"
-        content="Silksong Hub - Hollow Knight: Silksong Official News">
+        data-zh="Silksong Hub - 空洞骑士：丝之歌最新资讯"
+        data-en="Silksong Hub - Hollow Knight: Silksong Latest News"
+        content="Silksong Hub - Hollow Knight: Silksong Latest News">
   <meta property="og:description" 
         data-zh="最权威的空洞骑士：丝之歌资讯站。获取最新游戏资讯、发售消息、最低价格购买指南。"
         data-en="The most authoritative Hollow Knight: Silksong news site. Get the latest game news, release information, and best price guides."
@@ -41,9 +42,9 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://silksonghub.com/">
   <meta property="twitter:title" 
-        data-zh="Silksong Hub - 空洞骑士：丝之歌官方资讯"
-        data-en="Silksong Hub - Hollow Knight: Silksong Official News"
-        content="Silksong Hub - Hollow Knight: Silksong Official News">
+        data-zh="Silksong Hub - 空洞骑士：丝之歌最新资讯"
+        data-en="Silksong Hub - Hollow Knight: Silksong Latest News"
+        content="Silksong Hub - Hollow Knight: Silksong Latest News">
   <meta property="twitter:description" 
         data-zh="最权威的空洞骑士：丝之歌资讯站。获取最新游戏资讯、发售消息、最低价格购买指南。"
         data-en="The most authoritative Hollow Knight: Silksong news site. Get the latest game news, release information, and best price guides."
@@ -76,6 +77,27 @@
     }
   }
   </script>
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Silksong Hub",
+    "url": "https://silksonghub.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://silksonghub.com/assets/img/silksong-logo.png",
+      "width": 200,
+      "height": 200
+    },
+    "description": "The most authoritative Hollow Knight: Silksong news site",
+    "sameAs": [
+      "https://twitter.com/teamcherrygames",
+      "https://www.youtube.com/user/teamcherrygames"
+    ]
+  }
+  </script>
   
   <!-- 样式表 -->
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -92,10 +114,11 @@
   <!-- PWA Manifest -->
   <link rel="manifest" href="./manifest.json">
   <meta name="theme-color" content="#d94c83">
+  <meta name="robots" content="max-image-preview:large">
   
   <!-- 预加载关键资源 -->
   <link rel="preload" href="./assets/css/style.css" as="style">
-  <link rel="preload" href="./assets/js/header.js" as="script">
+  
   
   <!-- 预加载首屏LCP图片 -->
   <link rel="preload" href="./assets/img/hero-slide-1.webp" as="image" fetchpriority="high">
@@ -407,7 +430,7 @@
             <div class="news-content">
               <div class="news-meta">
                 <time datetime="2024-12-15">2024.12.15</time>
-                <span class="news-source" data-zh="官方博客" data-en="Official Blog">官方博客</span>
+                <span class="news-source" data-zh="开发博客" data-en="Dev Blog">开发博客</span>
               </div>
               <h3 class="news-title" 
                   data-zh="Team Cherry 开发进度更新" 
@@ -467,7 +490,7 @@
           <h2 class="celebration-title" data-zh="游戏已发售！" data-en="Game Released!">游戏已发售！</h2>
           <p class="celebration-subtitle" 
              data-zh="《空洞骑士：丝之歌》现已正式发售" 
-             data-en="Hollow Knight: Silksong is now officially released">
+             data-en="Hollow Knight: Silksong is now released">
             《空洞骑士：丝之歌》现已正式发售
           </p>
           <p class="celebration-description" 

@@ -50,7 +50,12 @@ class LanguageManager {
         } else if (element.tagName === 'TITLE') {
           element.textContent = enText;
         } else {
-          element.textContent = enText;
+          // 检查是否包含HTML标签
+          if (enText.includes('<') && enText.includes('>')) {
+            element.innerHTML = enText;
+          } else {
+            element.textContent = enText;
+          }
         }
       } else if (this.currentLang === 'zh-CN' && zhText) {
         // 中文
@@ -59,7 +64,12 @@ class LanguageManager {
         } else if (element.tagName === 'TITLE') {
           element.textContent = zhText;
         } else {
-          element.textContent = zhText;
+          // 检查是否包含HTML标签
+          if (zhText.includes('<') && zhText.includes('>')) {
+            element.innerHTML = zhText;
+          } else {
+            element.textContent = zhText;
+          }
         }
       } else if (enText) {
         // 默认英文
@@ -68,7 +78,12 @@ class LanguageManager {
         } else if (element.tagName === 'TITLE') {
           element.textContent = enText;
         } else {
-          element.textContent = enText;
+          // 检查是否包含HTML标签
+          if (enText.includes('<') && enText.includes('>')) {
+            element.innerHTML = enText;
+          } else {
+            element.textContent = enText;
+          }
         }
       }
     });
@@ -167,7 +182,12 @@ class LanguageManager {
     
     // 立即更新文本
     const currentText = this.currentLang === 'zh-CN' ? zhText : enText;
-    element.textContent = currentText;
+    // 检查是否包含HTML标签
+    if (currentText && currentText.includes('<') && currentText.includes('>')) {
+      element.innerHTML = currentText;
+    } else {
+      element.textContent = currentText;
+    }
   }
 }
 

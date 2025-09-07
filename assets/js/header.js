@@ -19,18 +19,18 @@ class SilksongHeader {
     header.id = 'site-header';
     header.innerHTML = `
       <div class="header-content">
-        <a href="index.html" class="logo" aria-label="Silksong Hub 首页">
-          <img src="./assets/img/silksong-logo.png" alt="Silksong" style="height: 32px; width: auto; margin-right: 8px;">
+        <a href="/" class="logo" rel="home" aria-label="Silksong Hub 首页">
+          <img src="/assets/img/silksong-logo.png" alt="Silksong" style="height: 32px; width: auto; margin-right: 8px;">
           <span class="logo-text">SilksongHub</span>
         </a>
         
         <nav role="navigation" aria-label="主导航">
           <ul id="main-nav">
-            <li><a href="index.html" data-page="home" data-zh="首页" data-en="Home">首页</a></li>
-            <!-- <li><a href="news.html" data-page="news" data-zh="新闻" data-en="News">新闻</a></li> -->
-            <li><a href="prices.html" data-page="prices" data-zh="价格" data-en="Prices">价格</a></li>
-            <li><a href="map.html" data-page="map" data-zh="地图" data-en="Map">地图</a></li>
-            <!-- <li><a href="media.html" data-page="media" data-zh="媒体" data-en="Media">媒体</a></li> -->
+            <li><a href="/" data-page="home" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="/news/" data-page="news" data-zh="新闻" data-en="News">新闻</a></li>
+            <li><a href="/prices.html" data-page="prices" data-zh="价格" data-en="Prices">价格</a></li>
+            <li><a href="/map.html" data-page="map" data-zh="地图" data-en="Map">地图</a></li>
+            <li><a href="/media.html" data-page="media" data-zh="媒体" data-en="Media">媒体</a></li>
           </ul>
         </nav>
         
@@ -305,13 +305,21 @@ class SilksongHeader {
   }
 
   updateUrlWithLanguage(lang) {
-    const url = new URL(window.location);
-    if (lang === 'en') {
-      url.searchParams.set('lang', 'en');
+    // 路径式多语言：英文(默认) = 无前缀，中文 = /zh/
+    const { pathname, search, hash } = window.location;
+    const parts = pathname.split('/').filter(Boolean); // 去掉空段
+    const isZh = parts[0] === 'zh';
+
+    let newParts = parts.slice();
+    if (lang === 'zh-CN') {
+      if (!isZh) newParts = ['zh', ...parts];
     } else {
-      url.searchParams.delete('lang');
+      if (isZh) newParts = parts.slice(1);
     }
-    window.history.replaceState({}, '', url);
+
+    const newPath = '/' + newParts.join('/') + (pathname.endsWith('/') || newParts.length === 0 ? '/' : '');
+    const newUrl = newPath + search + hash;
+    window.history.replaceState({}, '', newUrl);
   }
 
   initializeLanguage() {
@@ -320,9 +328,10 @@ class SilksongHeader {
     const urlLang = urlParams.get('lang');
     const storedLang = localStorage.getItem('selectedLanguage');
     const defaultLang = 'en';
-    
+    const pathIsZh = window.location.pathname.split('/').filter(Boolean)[0] === 'zh';
     const htmlLang = document.documentElement.dataset.lang || document.documentElement.lang;
-    let currentLang = urlLang ?? (storedLang && ['zh-CN','en'].includes(storedLang) ? storedLang : undefined) ?? (['zh-CN','en'].includes(htmlLang) ? htmlLang : defaultLang);
+    let currentLang = pathIsZh ? 'zh-CN' : 'en';
+    currentLang = urlLang ?? (storedLang && ['zh-CN','en'].includes(storedLang) ? storedLang : currentLang);
     
     // 设置初始语言
     if (currentLang !== 'en') {
