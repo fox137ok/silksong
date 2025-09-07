@@ -1381,3 +1381,205 @@ lite-youtube {
     font-size: 2rem;
   }
 }
+
+/* ========================= 
+   Steam价格对比样式
+   ========================= */
+#price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+#price-table th,
+#price-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+#price-table th {
+  background: var(--bg-tertiary);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#price-table td {
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+#price-table tr:hover {
+  background: rgba(217, 76, 131, 0.05);
+}
+
+#price-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* 最低价格高亮 */
+.lowest {
+  background: rgba(217, 76, 131, 0.2) !important;
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+.lowest-price-row {
+  background: rgba(217, 76, 131, 0.1) !important;
+}
+
+.lowest-price-row:hover {
+  background: rgba(217, 76, 131, 0.15) !important;
+}
+
+/* 购买按钮 */
+.buy-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.buy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(217, 76, 131, 0.4);
+  color: white;
+}
+
+/* 价格控制器 */
+.price-controls select {
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.price-controls select:hover,
+.price-controls select:focus {
+  border-color: var(--accent);
+  outline: none;
+  background: var(--bg-tertiary);
+}
+
+/* 最优价格横幅 */
+#best-deal-banner {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-glow);
+  animation: dealPulse 2s ease-in-out infinite;
+}
+
+@keyframes dealPulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: var(--shadow-glow);
+  }
+  50% { 
+    transform: scale(1.02); 
+    box-shadow: 0 0 40px rgba(217, 76, 131, 0.5);
+  }
+}
+
+/* 表格容器响应式 */
+.table-container {
+  margin: 2rem 0;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* 网格布局类 */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* 通用类 */
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+/* 加载动画 */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(217, 76, 131, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  #price-table th,
+  #price-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .price-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .buy-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .table-container {
+    margin: 1rem -1rem;
+    border-radius: 0;
+  }
+  
+  #best-deal-banner {
+    margin: 1rem -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

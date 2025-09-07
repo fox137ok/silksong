@@ -1,228 +1,373 @@
-// Silksong Hub - 价格表功能
-class PriceManager {
+// Silksong Hub - Steam Regional Price Comparison
+class SteamPriceManager {
   constructor() {
     this.data = [];
     this.isLoading = false;
-    this.regionSelector = null;
+    this.sortSelector = null;
+    this.currencyToggle = null;
     this.tableBody = null;
+    this.bestDealBanner = null;
+    this.bestDealText = null;
+    this.showUSD = false; // Toggle for showing USD equivalent prices
+    this.showUSDLocal = false; // true显示美元价格，false显示本地价格
+    this.exchangeRates = {
+      // 基于美元的汇率(2024年大致汇率)
+      'USD': 1.00,
+      'ARS': 0.0011, // 阿根廷比索 (更新汇率)
+      'TRY': 0.030,  // 土耳其里拉 (更新汇率)
+      'RUB': 0.011,  // 俄罗斯卢布
+      'BRL': 0.18,   // 巴西雷亚尔 (更新汇率)
+      'INR': 0.012,  // 印度卢比
+      'CNY': 0.14,   // 人民币
+      'EUR': 1.09,   // 欧元
+      'GBP': 1.27,   // 英镑
+      'JPY': 0.0067, // 日元
+      'KRW': 0.00076, // 韩元
+      'MXN': 0.055   // 墨西哥比索
+    };
     this.init();
   }
 
   async init() {
-    // 等待DOM加载完成
+    console.log('init() 调用，document.readyState:', document.readyState);
+    
+    // 由于使用了defer属性，DOM肯定已经准备好了
     if (document.readyState === 'loading') {
+      console.log('DOM还在加载，等待DOMContentLoaded...');
       document.addEventListener('DOMContentLoaded', () => this.setup());
     } else {
-      this.setup();
+      console.log('DOM已准备好，直接调用setup()');
+      // 使用setTimeout确保DOM完全准备好
+      setTimeout(() => this.setup(), 0);
     }
   }
 
   async setup() {
-    this.regionSelector = document.getElementById('region-selector');
-    this.tableBody = document.querySelector('#price-table tbody');
+    console.log('SteamPriceManager setup() started');
     
-    if (!this.regionSelector || !this.tableBody) {
-      console.warn('价格表元素未找到，跳过价格功能初始化');
+    this.sortSelector = document.getElementById('sort-selector');
+    this.currencyToggle = document.getElementById('currency-toggle');
+    this.tableBody = document.querySelector('#price-table tbody');
+    this.bestDealBanner = document.getElementById('best-deal-banner');
+    this.bestDealText = document.getElementById('best-deal-text');
+    
+    console.log('DOM element search results:', {
+      sortSelector: !!this.sortSelector,
+      currencyToggle: !!this.currencyToggle,
+      tableBody: !!this.tableBody,
+      bestDealBanner: !!this.bestDealBanner,
+      bestDealText: !!this.bestDealText
+    });
+    
+    if (!this.tableBody) {
+      console.warn('Price table element not found, skipping price functionality initialization');
       return;
     }
 
+    // Currency toggle functionality
+    this.initializeCurrencyToggle();
+    
     try {
+      console.log('Starting data loading...');
       await this.loadData();
+      console.log('Data loading completed, setting up event listeners...');
       this.setupEventListeners();
-      this.render(this.regionSelector.value);
+      console.log('Starting rendering...');
+      this.render();
+      console.log('Rendering completed');
     } catch (error) {
-      console.error('初始化价格表失败:', error);
-      this.showError('加载价格数据失败，请刷新页面重试');
+      console.error('Failed to initialize price table:', error);
+      this.showError('Failed to load price data: ' + error.message);
+    }
+  }
+
+  initializeCurrencyToggle() {
+    // Initialize currency toggle button text
+    this.updateCurrencyToggleText();
+    
+    // Listen for global language change events to update button text
+    window.addEventListener('languageChanged', () => {
+      this.updateCurrencyToggleText();
+    });
+  }
+
+  updateCurrencyToggleText() {
+    if (this.currencyToggle) {
+      const isZH = document.documentElement.lang.startsWith('zh');
+      this.currencyToggle.textContent = this.showUSD ? 
+        (isZH ? '显示本地价格' : 'Show Local Prices') : 
+        (isZH ? '显示美元价格' : 'Show USD Prices');
     }
   }
 
   async loadData() {
     if (this.isLoading) return;
     
+    console.log('loadData() 开始执行');
     this.isLoading = true;
     this.showLoading();
     
     try {
+      console.log('发起fetch请求到: ./data/prices.json');
+      console.log('当前页面URL:', window.location.href);
+      console.log('请求完整URL:', new URL('./data/prices.json', window.location.href).href);
+      
       const response = await fetch('./data/prices.json');
+      console.log('响应状态:', response.status, response.statusText);
+      
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }
       
+      console.log('开始解析JSON数据...');
       this.data = await response.json();
-      this.populateRegionSelector();
+      console.log('原始数据长度:', this.data.length);
+      
+      // 过滤只显示有Steam价格的数据
+      const filteredData = this.data.filter(item => item.steam && item.steam.price);
+      console.log('过滤后数据长度:', filteredData.length);
+      
+      // 处理每条数据，添加美元等价价格
+      console.log('开始处理价格数据...');
+      this.data = filteredData.map(item => {
+          try {
+            const currencyCode = this.getCurrencyCode(item.currency, item.region, item.steam.price);
+            const priceUSD = this.convertToUSD(item.steam.price, currencyCode);
+            const savings = this.calculateSavings(item.steam.price, currencyCode);
+            
+            return {
+              ...item,
+              steam: {
+                ...item.steam,
+                priceUSD: priceUSD,
+                savings: savings
+              }
+            };
+          } catch (error) {
+            console.error('处理价格数据时出错:', item, error);
+            // 返回默认值
+            return {
+              ...item,
+              steam: {
+                ...item.steam,
+                priceUSD: item.steam.price, // 假设是美元
+                savings: 0
+              }
+            };
+          }
+        });
+      console.log('价格数据处理完成，最终数据长度:', this.data.length);
     } catch (error) {
       console.error('加载价格数据失败:', error);
-      throw error;
+      
+      // 提供更详细的错误信息
+      let errorMessage = '数据加载失败';
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        if (window.location.protocol === 'file:') {
+          errorMessage = '请通过HTTP服务器访问页面，而不是直接打开HTML文件。可以使用 python3 -m http.server 8000 启动本地服务器。';
+        } else {
+          errorMessage = 'JSON文件加载失败，请检查data/prices.json文件是否存在';
+        }
+      } else if (error.message.includes('HTTP')) {
+        errorMessage = `服务器错误: ${error.message}`;
+      }
+      
+      throw new Error(errorMessage);
     } finally {
       this.isLoading = false;
     }
   }
 
-  populateRegionSelector() {
-    if (!this.regionSelector || !this.data.length) return;
-
-    // 获取所有唯一的地区
-    const regions = [...new Set(this.data.map(item => item.region))];
-    
-    // 清空现有选项（保留默认选项）
-    const currentOptions = Array.from(this.regionSelector.options);
-    const defaultOption = currentOptions.find(opt => opt.value === 'US');
-    
-    this.regionSelector.innerHTML = '';
-    
-    // 重新添加选项
-    regions.forEach(region => {
-      const option = document.createElement('option');
-      option.value = region;
-      option.textContent = this.getRegionName(region);
-      
-      if (region === 'US') {
-        option.selected = true;
-      }
-      
-      this.regionSelector.appendChild(option);
-    });
-  }
-
-  getRegionName(region) {
-    const regionNames = {
-      'US': '美国 (USD)',
-      'CN': '中国 (CNY)',
-      'MX': '墨西哥 (MXN)',
-      'AR': '阿根廷 (ARS)',
-      'TR': '土耳其 (TRY)',
-      'RU': '俄罗斯 (RUB)',
-      'BR': '巴西 (BRL)',
-      'IN': '印度 (INR)',
-      'EU': '欧盟 (EUR)',
-      'UK': '英国 (GBP)',
-      'JP': '日本 (JPY)',
-      'KR': '韩国 (KRW)'
+  getCurrencyCode(currency, region = '', price = 0) {
+    const currencyMap = {
+      '$': 'USD',
+      '¥': 'CNY', // 默认人民币，如果是日元会特别处理
+      '€': 'EUR',
+      '£': 'GBP',
+      '₺': 'TRY',
+      '₽': 'RUB',
+      'R$': 'BRL',
+      '₹': 'INR',
+      '₩': 'KRW'
     };
     
-    return regionNames[region] || region;
-  }
-
-  formatPrice(platform) {
-    if (!platform || !platform.price) {
-      return '<span class="price-unavailable">暂无</span>';
+    // 特殊处理：根据地区判断货币
+    if (currency === '¥') {
+      // 根据地区或价格范围判断是人民币还是日元
+      if (region === 'JP' || price > 1000) {
+        return 'JPY';
+      }
+      return 'CNY';
     }
     
-    const price = typeof platform.price === 'number' ? platform.price.toFixed(2) : platform.price;
-    const url = platform.url || '#';
-    const ariaLabel = `在 ${this.getPlatformName(platform.platform || '')} 购买，价格 ${platform.currency || ''} ${price}`;
-    
-    return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="price-link" aria-label="${ariaLabel}">
-      ${platform.currency || ''} ${price}
-    </a>`;
+    return currencyMap[currency] || 'USD';
   }
 
-  getPlatformName(platform) {
-    const names = {
-      'steam': 'Steam',
-      'eshop': 'Nintendo eShop', 
-      'ps': 'PlayStation Store',
-      'xbox': 'Xbox Store'
-    };
-    return names[platform] || platform;
+  convertToUSD(price, currencyCode) {
+    // 如果已经是美元，直接返回
+    if (currencyCode === 'USD') {
+      return price;
+    }
+    
+    const rate = this.exchangeRates[currencyCode] || 1;
+    return price * rate;
+  }
+
+  calculateSavings(price, currencyCode) {
+    const priceUSD = this.convertToUSD(price, currencyCode);
+    const basePriceUSD = 19.99; // 美区基准价格
+    return Math.max(0, basePriceUSD - priceUSD);
   }
 
   setupEventListeners() {
-    if (this.regionSelector) {
-      this.regionSelector.addEventListener('change', (e) => {
-        this.render(e.target.value);
+    if (this.sortSelector) {
+      this.sortSelector.addEventListener('change', () => this.render());
+    }
+
+    if (this.currencyToggle) {
+      this.currencyToggle.addEventListener('click', () => {
+        this.showUSD = !this.showUSD;
+        this.updateCurrencyToggleText();
+        this.render();
       });
+    }
+
+  }
+
+  sortData(data, sortBy) {
+    switch (sortBy) {
+      case 'price':
+        return [...data].sort((a, b) => a.steam.priceUSD - b.steam.priceUSD);
+      case 'region':
+        return [...data].sort((a, b) => this.getRegionName(a.region).localeCompare(this.getRegionName(b.region)));
+      case 'savings':
+        return [...data].sort((a, b) => b.steam.savings - a.steam.savings);
+      default:
+        return [...data].sort((a, b) => a.steam.priceUSD - b.steam.priceUSD);
     }
   }
 
-  render(selectedRegion) {
-    if (!this.tableBody || !this.data.length) return;
-
-    // 筛选选定地区的数据
-    const regionData = this.data.filter(item => item.region === selectedRegion);
+  render() {
+    console.log('render() 调用，数据长度:', this.data.length);
     
-    if (regionData.length === 0) {
-      this.showNoData(selectedRegion);
+    if (!this.tableBody) {
+      console.error('render(): tableBody 不存在');
+      return;
+    }
+    
+    if (!this.data.length) {
+      console.warn('render(): 没有数据可显示');
+      this.showError('没有价格数据可显示');
       return;
     }
 
-    // 获取所有平台的价格用于比较
-    const allPrices = [];
-    regionData.forEach(item => {
-      if (item.steam?.price) allPrices.push(item.steam.price);
-      if (item.eshop?.price) allPrices.push(item.eshop.price);
-      if (item.ps?.price) allPrices.push(item.ps.price);
-      if (item.xbox?.price) allPrices.push(item.xbox.price);
-    });
-
-    const minPrice = allPrices.length > 0 ? Math.min(...allPrices) : null;
+    const sortBy = this.sortSelector ? this.sortSelector.value : 'price';
+    console.log('排序方式:', sortBy);
+    const sortedData = this.sortData(this.data, sortBy);
+    console.log('排序后数据长度:', sortedData.length);
+    
+    // 找到最优惠的价格
+    const bestDeal = sortedData[0]; // 已经按价格排序，第一个是最便宜的
+    this.updateBestDealBanner(bestDeal);
 
     // 生成表格行
-    const rows = regionData.map(item => {
-      const steamLowest = item.steam?.price === minPrice;
-      const eshopLowest = item.eshop?.price === minPrice;
-      const psLowest = item.ps?.price === minPrice;
-      const xboxLowest = item.xbox?.price === minPrice;
-
+    const rows = sortedData.map((item, index) => {
+      const isLowest = index === 0; // 最便宜的标记为最优
+      const priceUSD = item.steam.priceUSD || item.steam.price || 0;
+      const savings = item.steam.savings || 0;
+      
+      const displayPrice = this.showUSD ? 
+        `$${priceUSD.toFixed(2)}` : 
+        `${item.currency}${this.formatPrice(item.steam.price)}`;
+      
+      const isZH = document.documentElement.lang.startsWith('zh');
+      const savingsText = savings > 0 ? 
+        `${isZH ? '节省' : 'Save'} $${savings.toFixed(2)}` : 
+        (isZH ? '无节省' : 'No savings');
+      
       return `
-        <tr>
+        <tr ${isLowest ? 'class="lowest-price-row"' : ''}>
           <td>
-            <strong>${this.getRegionName(item.region)}</strong>
+            <strong style="color: ${isLowest ? 'var(--accent)' : 'var(--text)'}">
+              ${this.getRegionName(item.region)}
+            </strong>
           </td>
-          <td class="${steamLowest ? 'lowest' : ''}" data-platform="steam">
-            ${this.formatPrice({ ...item.steam, platform: 'steam', currency: item.currency })}
+          <td class="${isLowest ? 'lowest' : ''}" style="font-weight: 600;">
+            ${displayPrice}
           </td>
-          <td class="${eshopLowest ? 'lowest' : ''}" data-platform="eshop">
-            ${this.formatPrice({ ...item.eshop, platform: 'eshop', currency: item.currency })}
+          <td style="color: var(--text-secondary);">
+            $${priceUSD.toFixed(2)}
           </td>
-          <td class="${psLowest ? 'lowest' : ''}" data-platform="ps">
-            ${this.formatPrice({ ...item.ps, platform: 'ps', currency: item.currency })}
+          <td style="color: ${savings > 0 ? 'var(--accent)' : 'var(--text-muted)'}; font-weight: 600;">
+            ${savingsText}
           </td>
-          <td class="${xboxLowest ? 'lowest' : ''}" data-platform="xbox">
-            ${this.formatPrice({ ...item.xbox, platform: 'xbox', currency: item.currency })}
+          <td>
+            <a href="${item.steam.url}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="buy-button"
+               aria-label="${isZH ? '购买' : 'Buy'} - Steam ${this.getRegionName(item.region)}">
+              ${isZH ? '购买' : 'Buy'}
+            </a>
           </td>
         </tr>
       `;
     }).join('');
 
     this.tableBody.innerHTML = rows;
-    
-    // 添加最低价格提示
-    if (minPrice !== null) {
-      this.showLowestPriceInfo(minPrice, regionData[0]?.currency || '');
-    }
   }
 
-  showLowestPriceInfo(price, currency) {
-    // 移除现有的提示
-    const existingInfo = document.querySelector('.lowest-price-info');
-    if (existingInfo) {
-      existingInfo.remove();
-    }
-
-    // 创建新的提示
-    const info = document.createElement('div');
-    info.className = 'lowest-price-info';
-    info.innerHTML = `
-      <p class="text-accent">
-        <strong>💰 最低价格: ${currency} ${price.toFixed(2)}</strong>
-      </p>
+  updateBestDealBanner(bestDeal) {
+    if (!this.bestDealBanner || !this.bestDealText || !bestDeal) return;
+    
+    const savings = bestDeal.steam.savings || 0;
+    const priceUSD = bestDeal.steam.priceUSD || bestDeal.steam.price || 0;
+    const savingsPercent = ((savings / 19.99) * 100).toFixed(1);
+    
+    this.bestDealText.innerHTML = `
+      ${this.getRegionName(bestDeal.region)} - ${bestDeal.currency}${this.formatPrice(bestDeal.steam.price)} 
+      (约 $${priceUSD.toFixed(2)}) 
+      <span style="color: #fff;">节省 ${savingsPercent}%</span>
     `;
+    this.bestDealBanner.style.display = 'block';
+  }
 
-    // 插入到表格前
-    const table = document.getElementById('price-table');
-    if (table) {
-      table.parentNode.insertBefore(info, table);
+  formatPrice(price) {
+    // 格式化价格显示
+    if (price >= 1000) {
+      return price.toLocaleString();
     }
+    return price.toString();
+  }
+
+  getRegionName(region) {
+    const isZH = document.documentElement.lang.startsWith('zh');
+    const regionNames = {
+      'US': isZH ? '美国' : 'United States',
+      'CN': isZH ? '中国' : 'China',
+      'MX': isZH ? '墨西哥' : 'Mexico',
+      'AR': isZH ? '阿根廷' : 'Argentina',
+      'TR': isZH ? '土耳其' : 'Turkey',
+      'RU': isZH ? '俄罗斯' : 'Russia',
+      'BR': isZH ? '巴西' : 'Brazil',
+      'IN': isZH ? '印度' : 'India',
+      'EU': isZH ? '欧盟' : 'European Union',
+      'UK': isZH ? '英国' : 'United Kingdom',
+      'JP': isZH ? '日本' : 'Japan',
+      'KR': isZH ? '韩国' : 'South Korea'
+    };
+    
+    return regionNames[region] || region;
   }
 
   showLoading() {
     if (this.tableBody) {
+      const isZH = document.documentElement.lang.startsWith('zh');
       this.tableBody.innerHTML = `
         <tr>
           <td colspan="5" class="text-center">
-            <span class="loading" aria-label="加载中"></span>
-            <span class="sr-only">正在加载价格数据...</span>
+            <span class="loading" aria-label="Loading"></span>
+            <span style="margin-left: 0.5rem;">${isZH ? '正在加载价格数据...' : 'Loading price data...'}</span>
           </td>
         </tr>
       `;
@@ -241,60 +386,42 @@ class PriceManager {
     }
   }
 
-  showNoData(region) {
-    if (this.tableBody) {
-      this.tableBody.innerHTML = `
-        <tr>
-          <td colspan="5" class="text-center" style="color: var(--text-muted); padding: 2rem;">
-            暂无 ${this.getRegionName(region)} 地区的价格数据
-          </td>
-        </tr>
-      `;
-    }
+  // 公开方法：获取最优价格信息
+  getBestDeal() {
+    if (!this.data.length) return null;
+    
+    const sorted = this.sortData(this.data, 'price');
+    const bestDeal = sorted[0];
+    
+    return {
+      region: bestDeal.region,
+      regionName: this.getRegionName(bestDeal.region),
+      price: bestDeal.steam.price,
+      currency: bestDeal.currency,
+      priceUSD: bestDeal.steam.priceUSD,
+      savings: bestDeal.steam.savings,
+      savingsPercent: ((bestDeal.steam.savings / 19.99) * 100).toFixed(1),
+      url: bestDeal.steam.url
+    };
   }
 
-  // 公开方法：手动刷新数据
+  // 公开方法：刷新数据
   async refresh() {
     this.data = [];
     await this.loadData();
-    if (this.regionSelector) {
-      this.render(this.regionSelector.value);
-    }
+    this.render();
   }
 
-  // 公开方法：获取当前数据
+  // 公开方法：获取所有数据
   getData() {
     return this.data;
-  }
-
-  // 公开方法：获取最低价格信息
-  getLowestPrice(region) {
-    const regionData = this.data.filter(item => item.region === region);
-    if (regionData.length === 0) return null;
-
-    const prices = [];
-    regionData.forEach(item => {
-      if (item.steam?.price) prices.push({ platform: 'Steam', price: item.steam.price, url: item.steam.url });
-      if (item.eshop?.price) prices.push({ platform: 'Nintendo eShop', price: item.eshop.price, url: item.eshop.url });
-      if (item.ps?.price) prices.push({ platform: 'PlayStation Store', price: item.ps.price, url: item.ps.url });
-      if (item.xbox?.price) prices.push({ platform: 'Xbox Store', price: item.xbox.price, url: item.xbox.url });
-    });
-
-    if (prices.length === 0) return null;
-
-    prices.sort((a, b) => a.price - b.price);
-    return {
-      ...prices[0],
-      currency: regionData[0].currency,
-      region: regionData[0].region
-    };
   }
 }
 
 // 创建全局实例
-window.priceManager = new PriceManager();
+window.steamPriceManager = new SteamPriceManager();
 
 // 导出给其他脚本使用
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = PriceManager;
+  module.exports = SteamPriceManager;
 }
