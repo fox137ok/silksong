@@ -1278,6 +1278,8 @@ lite-youtube {
 
 /* 移动设备 (768px以下) */
 @media (max-width: 768px) {
+  /* 修复部分移动端（尤其 iOS）下背景固定导致的滚动异常 */
+  body { background-attachment: scroll; }
   /* 移动端导航 */
   #main-nav {
     position: fixed;

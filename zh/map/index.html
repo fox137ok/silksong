@@ -4,8 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2BZFZX1ZW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-Z2BZFZX1ZW');
+  </script>
+
   <title>世界地图 - 探索法鲁姆王国 | Silksong Hub</title>
   <meta name="description" content="探索丝之歌的庞大世界地图。了解法鲁姆王国的各个区域、地标、隐藏区域和重要位置。">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "丝之歌 世界地图",
+    "description": "探索法鲁姆王国互动地图与关键区域",
+    "url": "https://silksonghub.com/zh/map/",
+    "inLanguage": "zh-CN",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://silksonghub.com/zh/"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "地图",
+        "item": "https://silksonghub.com/zh/map/"
+      }]
+    }
+  }
+  </script>
 
   <link rel="canonical" href="https://silksonghub.com/zh/map/">
   <link rel="alternate" hreflang="en" href="https://silksonghub.com/map.html">
@@ -30,19 +64,194 @@
 
 <body>
   <main role="main">
+    <!-- 页面标题区域 -->
     <section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-secondary);">
       <div class="container">
         <div class="text-center">
           <h1>世界地图</h1>
-          <p class="hero-subtitle">探索法鲁姆王国，发现隐藏的秘密与危险</p>
+          <p class="hero-subtitle">探索法鲁姆王国的广阔世界，发现隐藏的秘密与危险</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- 交互式地图区域 -->
+    <section class="section" style="padding-bottom: 1rem;">
       <div class="container">
-        <div class="map-iframe-wrapper" style="width: 100%; height: 80vh; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow);">
-          <iframe src="https://mapgenie.io/hollow-knight-silksong/maps/pharloom?embed=light" style="position: relative; width: 100%; height: 100%; border: none;" title="法鲁姆王国互动地图" loading="lazy" allowfullscreen></iframe>
+        <h2 class="text-center mb-2" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem;">法鲁姆王国地图</h2>
+        
+        <div class="map-container" style="position: relative; margin-bottom: 1rem;">
+          <div class="map-iframe-wrapper" style="width: 100%; height: 80vh; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow);">
+            <iframe src="https://mapgenie.io/hollow-knight-silksong/maps/pharloom?embed=light" style="position: relative; width: 100%; height: 100%; border: none;" title="法鲁姆王国互动地图" loading="lazy" allowfullscreen></iframe>
+          </div>
+          <div class="map-instructions" style="margin-top: 0.8rem; padding: 1rem; background: var(--bg-secondary); border-radius: var(--radius); border: 1px solid var(--border);">
+            <h4 style="margin-bottom: 0.5rem; color: var(--accent);">地图使用说明</h4>
+            <ul style="font-size: 0.875rem; color: var(--text-secondary); display: flex; flex-wrap: wrap; gap: 1rem 2rem; list-style: none; padding: 0;">
+              <li>👆 点击并拖动可平移地图</li>
+              <li>🔄 鼠标滚轮或双指缩放可放大/缩小地图</li>
+              <li>✓ 点击地点图标可查看详细信息</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p id="map-credit" style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0;">
+            地图数据来源：<a href="https://mapgenie.io/hollow-knight-silksong" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">MapGenie.io</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 探索提示 -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <h2 class="text-center mb-2" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; display: inline-block; padding-bottom: 0.5rem;">
+          探索提示
+          <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: var(--accent);"></span>
+        </h2>
+        <div class="tips-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; align-items: stretch;">
+          <div class="card" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(255, 193, 7, 0.02)); height: 100%;">
+            <div style="padding: 1.5rem;">
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; border-bottom: 2px solid rgba(255, 193, 7, 0.3); padding-bottom: 0.8rem;">
+                <span style="font-size: 1.8rem; margin-right: 0.6rem;">🎯</span>
+                探索建议
+              </h3>
+              <ul style="font-size: 0.95rem; color: var(--text); list-style-type: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 193, 7, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #FFC107; font-weight: 600;">1</span>
+                  </span>
+                  彻底探索每个区域再前往下一个
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 193, 7, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #FFC107; font-weight: 600;">2</span>
+                  </span>
+                  注意墙壁上的可破坏标记
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 193, 7, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #FFC107; font-weight: 600;">3</span>
+                  </span>
+                  收集所有能力升级道具
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 193, 7, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #FFC107; font-weight: 600;">4</span>
+                  </span>
+                  与NPC对话获取线索
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 193, 7, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(255, 193, 7, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #FFC107; font-weight: 600;">5</span>
+                  </span>
+                  标记未解开的谜题位置
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="card" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; background: linear-gradient(135deg, rgba(244, 67, 54, 0.08), rgba(244, 67, 54, 0.02)); height: 100%;">
+            <div style="padding: 1.5rem;">
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; border-bottom: 2px solid rgba(244, 67, 54, 0.3); padding-bottom: 0.8rem;">
+                <span style="font-size: 1.8rem; margin-right: 0.6rem;">⚠️</span>
+                生存技巧
+              </h3>
+              <ul style="font-size: 0.95rem; color: var(--text); list-style-type: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(244, 67, 54, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #F44336; font-weight: 600;">1</span>
+                  </span>
+                  学会利用丝线快速移动
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(244, 67, 54, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #F44336; font-weight: 600;">2</span>
+                  </span>
+                  掌握空中连击技巧
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(244, 67, 54, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #F44336; font-weight: 600;">3</span>
+                  </span>
+                  合理分配治疗道具
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(244, 67, 54, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #F44336; font-weight: 600;">4</span>
+                  </span>
+                  熟记存档点位置
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(244, 67, 54, 0.3), rgba(244, 67, 54, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(244, 67, 54, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #F44336; font-weight: 600;">5</span>
+                  </span>
+                  避免同时对战多个敌人
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; background: linear-gradient(135deg, rgba(33, 150, 243, 0.08), rgba(33, 150, 243, 0.02)); height: 100%;">
+            <div style="padding: 1.5rem;">
+              <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; border-bottom: 2px solid rgba(33, 150, 243, 0.3); padding-bottom: 0.8rem;">
+                <span style="font-size: 1.8rem; margin-right: 0.6rem;">🔍</span>
+                隐藏内容
+              </h3>
+              <ul style="font-size: 0.95rem; color: var(--text); list-style-type: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(33, 150, 243, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #2196F3; font-weight: 600;">1</span>
+                  </span>
+                  寻找隐藏的通道和房间
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(33, 150, 243, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #2196F3; font-weight: 600;">2</span>
+                  </span>
+                  解锁特殊能力和装备
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(33, 150, 243, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #2196F3; font-weight: 600;">3</span>
+                  </span>
+                  收集法鲁姆王国的历史碎片
+                </li>
+                <li style="margin-bottom: 0.7rem; display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(33, 150, 243, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #2196F3; font-weight: 600;">4</span>
+                  </span>
+                  发现可选的支线任务
+                </li>
+                <li style="display: flex; align-items: flex-start; line-height: 1.4;">
+                  <span style="display: inline-block; min-width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(33, 150, 243, 0.1)); margin-right: 0.8rem; position: relative; top: 1px; border: 1px solid rgba(33, 150, 243, 0.2);">
+                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; color: #2196F3; font-weight: 600;">5</span>
+                  </span>
+                  解开环境谜题获取奖励
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 世界观背景 -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <h2 class="text-center mb-2">法鲁姆王国的故事</h2>
+        <div class="lore-content" style="max-width: 800px; margin: 0 auto;">
+          <div class="card">
+            <h3 style="color: var(--accent);">古老王国的兴衰</h3>
+            <p>法鲁姆王国曾经是一个繁荣昌盛的文明，拥有先进的技术和强大的魔法力量。然而，一场神秘的灾难改变了一切，王国陷入混乱，居民们变异成了危险的生物。</p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--accent);">霍妮特的使命</h3>
+            <p>作为德特茅斯的公主，霍妮特来到法鲁姆王国寻找答案。她必须掌握新的能力，面对前所未有的挑战，最终揭开王国沦陷的真相，拯救这片土地。</p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--accent);">丝线的力量</h3>
+            <p>不同于空洞骑士的骨钉和魔法，霍妮特依靠丝线和缝衣针战斗。这些丝线不仅是武器，更是探索世界的工具，让她能够到达前所未有的高度和深度。</p>
+          </div>
         </div>
       </div>
     </section>
@@ -52,4 +261,3 @@
   <script src="/assets/js/language.js" defer></script>
 </body>
 </html>
-

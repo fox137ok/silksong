@@ -108,11 +108,11 @@ class SteamPriceManager {
     this.showLoading();
     
     try {
-      console.log('发起fetch请求到: ./data/prices.json');
+      console.log('发起fetch请求到: /data/prices.json');
       console.log('当前页面URL:', window.location.href);
-      console.log('请求完整URL:', new URL('./data/prices.json', window.location.href).href);
+      console.log('请求完整URL:', new URL('/data/prices.json', window.location.origin).href);
       
-      const response = await fetch('./data/prices.json');
+      const response = await fetch('/data/prices.json');
       console.log('响应状态:', response.status, response.statusText);
       
       if (!response.ok) {

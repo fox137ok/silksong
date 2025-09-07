@@ -4,8 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2BZFZX1ZW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-Z2BZFZX1ZW');
+  </script>
+
   <title>Silksong Hub - 空洞骑士：丝之歌官方资讯与最低价购买指南</title>
   <meta name="description" content="最权威的空洞骑士：丝之歌资讯站。获取最新游戏资讯、发售消息、最低价格购买指南，抢先体验Team Cherry的最新力作。">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Silksong Hub",
+    "description": "空洞骑士：丝之歌中文资讯与购买指南",
+    "url": "https://silksonghub.com/zh/",
+    "inLanguage": ["zh-CN", "en-US"],
+    "author": {
+      "@type": "Organization",
+      "name": "Silksong Hub"
+    },
+    "about": {
+      "@type": "VideoGame",
+      "name": "Hollow Knight: Silksong",
+      "developer": {"@type": "Organization", "name": "Team Cherry"},
+      "gamePlatform": ["PC", "Nintendo Switch", "PlayStation", "Xbox"],
+      "genre": ["Action", "Adventure", "Metroidvania"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Silksong Hub",
+    "url": "https://silksonghub.com/zh/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://silksonghub.com/assets/img/silksong-logo.png",
+      "width": 200,
+      "height": 200
+    },
+    "description": "丝之歌中文资讯站与价格指南",
+    "sameAs": [
+      "https://twitter.com/teamcherrygames",
+      "https://www.youtube.com/user/teamcherrygames"
+    ]
+  }
+  </script>
 
   <link rel="canonical" href="https://silksonghub.com/zh/">
   <link rel="alternate" hreflang="en" href="https://silksonghub.com/">
@@ -39,9 +90,11 @@
 
 <body>
   <main role="main">
+    <!-- 主视觉轮播区 -->
     <section class="hero-carousel" aria-labelledby="carousel-title">
       <div class="carousel-container">
         <div class="carousel-slides">
+          <!-- 幻灯片1（带LCP图片） -->
           <div class="carousel-slide active" data-bg="/assets/img/hero-slide-1.webp">
             <img src="/assets/img/hero-slide-1.webp" alt="空洞骑士：丝之歌 - 探索充满秘密与危险的王国" class="carousel-bg-image" fetchpriority="high" width="1920" height="1080">
             <div class="slide-overlay">
@@ -51,23 +104,237 @@
               </div>
             </div>
           </div>
+          
+          <!-- 幻灯片2 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-2.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">公主霍妮特的史诗冒险</h2>
+                <p class="slide-tagline">全新主角，全新能力，全新体验</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 幻灯片3 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-3.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">丝线操控的全新战斗</h2>
+                <p class="slide-tagline">掌握霍妮特独特的丝线能力</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 幻灯片4 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-4.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">庞大的法鲁姆王国</h2>
+                <p class="slide-tagline">比德特茅斯更加庞大复杂的世界</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 幻灯片5 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-5.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">神秘的新敌人</h2>
+                <p class="slide-tagline">面对法鲁姆王国的危险生物</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 幻灯片6 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-6.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">Christopher Larkin的音乐</h2>
+                <p class="slide-tagline">沉浸于令人沉醉的原声音乐</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 幻灯片7 -->
+          <div class="carousel-slide" data-bg="/assets/img/hero-slide-7.webp">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h2 class="slide-title">史诗般的BOSS战</h2>
+                <p class="slide-tagline">挑战强大的守护者和敌人</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 轮播控制 -->
+        <button class="carousel-btn carousel-prev" aria-label="上一张">‹</button>
+        <button class="carousel-btn carousel-next" aria-label="下一张">›</button>
+
+        <!-- 轮播指示器 -->
+        <div class="carousel-indicators">
+          <button class="indicator active" data-slide="0" aria-label="幻灯片 1"></button>
+          <button class="indicator" data-slide="1" aria-label="幻灯片 2"></button>
+          <button class="indicator" data-slide="2" aria-label="幻灯片 3"></button>
+          <button class="indicator" data-slide="3" aria-label="幻灯片 4"></button>
+          <button class="indicator" data-slide="4" aria-label="幻灯片 5"></button>
+          <button class="indicator" data-slide="5" aria-label="幻灯片 6"></button>
+          <button class="indicator" data-slide="6" aria-label="幻灯片 7"></button>
         </div>
       </div>
     </section>
 
+    <!-- 购买平台区域 -->
     <section class="platform-showcase" aria-labelledby="platform-title">
       <div class="container">
         <h2 id="platform-title" class="section-title">购买平台</h2>
         <p class="platform-subtitle">在您喜爱的平台上体验丝之歌</p>
+        
+        <div class="platform-logos">
+          <a href="https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在Steam上购买">
+            <img src="/assets/img/platform-steam.webp" alt="Steam" class="platform-logo" loading="lazy">
+            <span class="platform-name">Steam</span>
+          </a>
+          <a href="https://www.gog.com/game/hollow_knight_silksong" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在GOG上购买">
+            <img src="/assets/img/platform-gog.webp" alt="GOG" class="platform-logo" loading="lazy">
+            <span class="platform-name">GOG</span>
+          </a>
+          <a href="https://www.humblebundle.com/store/hollow-knight-silksong" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在Humble Store上购买">
+            <img src="/assets/img/platform-humble.webp" alt="Humble Store" class="platform-logo" loading="lazy">
+            <span class="platform-name">Humble Store</span>
+          </a>
+          <a href="https://store.playstation.com/en-us/concept/10005908" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在PlayStation 4上购买">
+            <img src="/assets/img/platform-ps4.webp" alt="PlayStation 4" class="platform-logo" loading="lazy">
+            <span class="platform-name">PlayStation 4</span>
+          </a>
+          <a href="https://store.playstation.com/en-us/concept/10005908" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在PlayStation 5上购买">
+            <img src="/assets/img/platform-ps5.webp" alt="PlayStation 5" class="platform-logo" loading="lazy">
+            <span class="platform-name">PlayStation 5</span>
+          </a>
+          <a href="https://www.xbox.com/en-us/games/store/hollow-knight-silksong/9n116v0599hb" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在Xbox Game Pass上购买">
+            <img src="/assets/img/platform-xbox-gamepass.webp" alt="Xbox Game Pass" class="platform-logo" loading="lazy">
+            <span class="platform-name">Xbox Game Pass</span>
+          </a>
+          <a href="https://www.nintendo.com/store/products/hollow-knight-silksong-switch/" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在Nintendo Switch上购买">
+            <img src="/assets/img/platform-switch.webp" alt="Nintendo Switch" class="platform-logo" loading="lazy">
+            <span class="platform-name">Nintendo Switch</span>
+          </a>
+          <a href="https://www.nintendo.com/us/store/products/hollow-knight-silksong-nintendo-switch-2-edition-switch-2/" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="在Nintendo Switch 2上购买">
+            <img src="/assets/img/platform-switch2.webp" alt="Nintendo Switch 2" class="platform-logo" loading="lazy">
+            <span class="platform-name">Nintendo Switch 2</span>
+          </a>
+        </div>
+
         <div class="platform-cta">
           <a href="/zh/prices/" class="cta-button primary" role="button">如何用最低价格买 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 视频展示区 -->
+    <section class="video-showcase" aria-labelledby="video-title">
+      <div class="container">
+        <div class="video-container">
+          <div class="iframe-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/6XGeJwsUP9c" title="Hollow Knight: Silksong 游戏演示" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 游戏介绍区 -->
+    <section class="game-intro" aria-labelledby="intro-title">
+      <div class="container">
+        <div class="intro-content">
+          <!-- 左侧：游戏简介 -->
+          <div class="intro-left">
+            <h2 id="intro-title" class="intro-title">关于丝之歌</h2>
+            <div class="intro-description">
+              <p>《空洞骑士：丝之歌》是 Team Cherry 开发的动作冒险游戏续作。这次你将扮演公主霍妮特，踏上一场全新的冒险旅程，探索神秘的法鲁姆王国。</p>
+              <p>游戏将带来全新的战斗系统、丝线操控机制，以及比前作更加庞大复杂的世界。Christopher Larkin 再次为游戏创作了令人沉醉的原声音乐。</p>
+            </div>
+
+            <div class="feature-highlights">
+              <div class="feature-item">
+                <div class="feature-icon">🗡️</div>
+                <div class="feature-text">
+                  <h3>全新主角</h3>
+                  <p>扮演公主霍妮特，掌握丝线操控技巧</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🏰</div>
+                <div class="feature-text">
+                  <h3>庞大世界</h3>
+                  <p>探索法鲁姆王国的无数秘密</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">🎵</div>
+                <div class="feature-text">
+                  <h3>传奇音乐</h3>
+                  <p>Christopher Larkin 谱写的动人乐章</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右侧：关键数据展示 -->
+          <div class="intro-right">
+            <div class="stats-card">
+              <h3 class="stats-title">游戏信息</h3>
+              <div class="stat-item">
+                <span class="stat-label">开发商</span>
+                <span class="stat-value">Team Cherry</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">游戏类型</span>
+                <span class="stat-value">动作冒险</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">发售状态</span>
+                <span class="stat-value">已发售</span>
+              </div>
+              <div class="stat-item platform-stat-item">
+                <div class="platform-header">
+                  <span class="stat-label">支持平台</span>
+                </div>
+                <div class="platform-icons-wrapper">
+                  <div class="platform-icons">
+                    <img src="/assets/img/platform-steam.webp" alt="Steam" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-gog.webp" alt="GOG" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-humble.webp" alt="Humble Store" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-ps4.webp" alt="PlayStation 4" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-ps5.webp" alt="PlayStation 5" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-xbox-gamepass.webp" alt="Xbox Game Pass" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-switch.webp" alt="Nintendo Switch" class="platform-icon" loading="lazy">
+                    <img src="/assets/img/platform-switch2.webp" alt="Nintendo Switch 2" class="platform-icon" loading="lazy">
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">发售日期</span>
+                <span class="stat-value">2025年9月4日</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 发售庆祝区 -->
+    <section class="release-celebration">
+      <div class="container">
+        <div class="celebration-content">
+          <h2 class="celebration-title">游戏已发售！</h2>
+          <p class="celebration-subtitle">《空洞骑士：丝之歌》现已正式发售</p>
+          <p class="celebration-description">立即购买，开始你的法鲁姆王国冒险之旅</p>
         </div>
       </div>
     </section>
   </main>
 
   <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/carousel.js" defer></script>
   <script src="/assets/js/language.js" defer></script>
 </body>
 </html>
-
