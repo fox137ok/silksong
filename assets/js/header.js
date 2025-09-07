@@ -36,13 +36,13 @@ class SilksongHeader {
         
         <!-- 语言切换器 -->
         <div class="language-switcher">
-          <button class="lang-toggle" aria-label="切换语言" data-current-lang="zh-CN">
-            <span class="lang-current">中文</span>
+          <button class="lang-toggle" aria-label="切换语言" data-current-lang="en">
+            <span class="lang-current">English</span>
             <span class="lang-arrow">▼</span>
           </button>
           <div class="lang-dropdown">
-            <button class="lang-option" data-lang="zh-CN">中文</button>
             <button class="lang-option" data-lang="en">English</button>
+            <button class="lang-option" data-lang="zh-CN">中文</button>
           </div>
         </div>
 
@@ -327,6 +327,9 @@ class SilksongHeader {
     // 设置初始语言
     if (currentLang !== 'en') {
       this.switchLanguage(currentLang);
+    } else {
+      // 确保默认语言为英语时也正确设置
+      this.switchLanguage('en');
     }
   }
 

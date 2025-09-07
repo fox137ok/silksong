@@ -382,6 +382,17 @@ a:focus {
   opacity: 1;
 }
 
+.carousel-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
 .slide-overlay {
   position: absolute;
   inset: 0;
@@ -1096,6 +1107,102 @@ lite-youtube {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* ========================= 
+   新闻详情页（Article）
+   ========================= */
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.article header h1 {
+  font-size: 2.5rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.article-chip {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.article-cover {
+  margin: 1rem 0 1.25rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.article-cover img {
+  width: 100%;
+  height: clamp(220px, 40vw, 480px);
+  object-fit: cover;
+  display: block;
+}
+
+.prose {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.prose p { margin-bottom: 1.1rem; }
+.prose h2 { margin: 1.8rem 0 0.8rem; font-size: 1.6rem; color: var(--text); }
+.prose h3 { margin: 1.4rem 0 0.6rem; font-size: 1.25rem; color: var(--text); }
+.prose ul, .prose ol { padding-left: 1.25rem; margin: 0.8rem 0 1.1rem; }
+.prose li { margin: 0.35rem 0; }
+.prose blockquote {
+  margin: 1.2rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(217, 76, 131, 0.08);
+  color: var(--text);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.figure { margin: 1.25rem 0; }
+.figure img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-light); }
+.caption { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; text-align: center; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tags { margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag { padding: 0.25rem 0.6rem; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; background: rgba(255,255,255,0.04); }
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.article-nav a { color: var(--text-secondary); }
+.article-nav a:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .article header h1 { font-size: 2rem; }
+  .gallery { grid-template-columns: 1fr; }
 }
 
 .text-center { text-align: center; }

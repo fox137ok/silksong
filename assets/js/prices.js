@@ -160,16 +160,16 @@ class SteamPriceManager {
     } catch (error) {
       console.error('Failed to load price data:', error);
       
-      // 提供更详细的错误信息
-      let errorMessage = '数据加载失败';
+      // Provide more detailed error information
+      let errorMessage = 'Failed to load data';
       if (error.name === 'TypeError' && error.message.includes('fetch')) {
         if (window.location.protocol === 'file:') {
-          errorMessage = '请通过HTTP服务器访问页面，而不是直接打开HTML文件。可以使用 python3 -m http.server 8000 启动本地服务器。';
+          errorMessage = 'Please access the page through an HTTP server instead of opening the HTML file directly. You can use "python3 -m http.server 8000" to start a local server.';
         } else {
-          errorMessage = 'JSON文件加载失败，请检查data/prices.json文件是否存在';
+          errorMessage = 'Failed to load JSON file, please check if data/prices.json exists';
         }
       } else if (error.message.includes('HTTP')) {
-        errorMessage = `服务器错误: ${error.message}`;
+        errorMessage = `Server error: ${error.message}`;
       }
       
       throw new Error(errorMessage);
@@ -324,10 +324,11 @@ class SteamPriceManager {
     const priceUSD = bestDeal.steam.priceUSD || bestDeal.steam.price || 0;
     const savingsPercent = ((savings / 19.99) * 100).toFixed(1);
     
+    const isZH = document.documentElement.lang.startsWith('zh');
     this.bestDealText.innerHTML = `
       ${this.getRegionName(bestDeal.region)} - ${bestDeal.currency}${this.formatPrice(bestDeal.steam.price)} 
-      (约 $${priceUSD.toFixed(2)}) 
-      <span style="color: #fff;">节省 ${savingsPercent}%</span>
+      (${isZH ? '约' : 'approx.'} $${priceUSD.toFixed(2)}) 
+      <span style="color: #fff;">${isZH ? '节省' : 'Save'} ${savingsPercent}%</span>
     `;
     this.bestDealBanner.style.display = 'block';
   }

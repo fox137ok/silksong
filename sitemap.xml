@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage - Chinese (Default) -->
+  <url>
+    <loc>https://silksonghub.com/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/"/>
+  </url>
+  
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://silksonghub.com/en/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/"/>
+  </url>
+  
+  <!-- Prices Page - Chinese -->
+  <url>
+    <loc>https://silksonghub.com/prices.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/prices/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/prices.html"/>
+  </url>
+  
+  <!-- Prices Page - English -->
+  <url>
+    <loc>https://silksonghub.com/en/prices/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/prices/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/prices.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/prices.html"/>
+  </url>
+  
+  <!-- Map Page - Chinese -->
+  <url>
+    <loc>https://silksonghub.com/map.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/map/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/map.html"/>
+  </url>
+  
+  <!-- Map Page - English -->
+  <url>
+    <loc>https://silksonghub.com/en/map/</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://silksonghub.com/en/map/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/map.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silksonghub.com/map.html"/>
+  </url>
+  
+  <!-- News Page -->
+  <url>
+    <loc>https://silksonghub.com/news.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Media Page -->
+  <url>
+    <loc>https://silksonghub.com/media.html</loc>
+    <lastmod>2025-01-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

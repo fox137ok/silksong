@@ -53,7 +53,8 @@ class HeroCarousel {
     // 预加载所有轮播图片以提升性能
     this.slides.forEach((slide, index) => {
       const bgImage = slide.dataset.bg;
-      if (bgImage) {
+      // 跳过第一张幻灯片，因为它使用img元素来优化LCP
+      if (bgImage && index !== 0) {
         const img = new Image();
         img.onload = () => {
           slide.style.backgroundImage = `url(${bgImage})`;
