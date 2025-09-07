@@ -1,7 +1,7 @@
 // Silksong Hub - 多语言支持系统
 class LanguageManager {
   constructor() {
-    this.currentLang = 'zh-CN';
+    this.currentLang = 'en';
     this.init();
   }
 
@@ -20,7 +20,7 @@ class LanguageManager {
 
   setupLanguageElements() {
     // 获取当前语言设置
-    this.currentLang = document.documentElement.dataset.lang || 'zh-CN';
+    this.currentLang = document.documentElement.dataset.lang || 'en';
     
     // 初始化所有多语言元素
     this.updateAllElements();
@@ -52,14 +52,23 @@ class LanguageManager {
         } else {
           element.textContent = enText;
         }
-      } else if (zhText) {
-        // 默认中文
+      } else if (this.currentLang === 'zh-CN' && zhText) {
+        // 中文
         if (element.tagName === 'META') {
           element.setAttribute('content', zhText);
         } else if (element.tagName === 'TITLE') {
           element.textContent = zhText;
         } else {
           element.textContent = zhText;
+        }
+      } else if (enText) {
+        // 默认英文
+        if (element.tagName === 'META') {
+          element.setAttribute('content', enText);
+        } else if (element.tagName === 'TITLE') {
+          element.textContent = enText;
+        } else {
+          element.textContent = enText;
         }
       }
     });
@@ -148,7 +157,7 @@ class LanguageManager {
 
   // 获取当前语言的文本
   getText(zhText, enText) {
-    return this.currentLang === 'en' ? enText : zhText;
+    return this.currentLang === 'zh-CN' ? zhText : enText;
   }
 
   // 动态添加多语言支持的元素
@@ -157,7 +166,7 @@ class LanguageManager {
     element.dataset.en = enText;
     
     // 立即更新文本
-    const currentText = this.currentLang === 'en' ? enText : zhText;
+    const currentText = this.currentLang === 'zh-CN' ? zhText : enText;
     element.textContent = currentText;
   }
 }

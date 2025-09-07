@@ -158,7 +158,7 @@ class SteamPriceManager {
         });
       console.log('价格数据处理完成，最终数据长度:', this.data.length);
     } catch (error) {
-      console.error('加载价格数据失败:', error);
+      console.error('Failed to load price data:', error);
       
       // 提供更详细的错误信息
       let errorMessage = '数据加载失败';
@@ -256,8 +256,8 @@ class SteamPriceManager {
     }
     
     if (!this.data.length) {
-      console.warn('render(): 没有数据可显示');
-      this.showError('没有价格数据可显示');
+      console.warn('render(): No data to display');
+      this.showError('No price data to display');
       return;
     }
 

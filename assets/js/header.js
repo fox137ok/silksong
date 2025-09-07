@@ -319,17 +319,13 @@ class SilksongHeader {
     const urlParams = new URLSearchParams(window.location.search);
     const urlLang = urlParams.get('lang');
     const storedLang = localStorage.getItem('selectedLanguage');
-    const defaultLang = 'zh-CN';
+    const defaultLang = 'en';
     
-    let currentLang = defaultLang;
-    if (urlLang === 'en') {
-      currentLang = 'en';
-    } else if (storedLang && ['zh-CN', 'en'].includes(storedLang)) {
-      currentLang = storedLang;
-    }
+    const htmlLang = document.documentElement.dataset.lang || document.documentElement.lang;
+    let currentLang = urlLang ?? (storedLang && ['zh-CN','en'].includes(storedLang) ? storedLang : undefined) ?? (['zh-CN','en'].includes(htmlLang) ? htmlLang : defaultLang);
     
     // 设置初始语言
-    if (currentLang !== 'zh-CN') {
+    if (currentLang !== 'en') {
       this.switchLanguage(currentLang);
     }
   }
