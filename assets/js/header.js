@@ -13,7 +13,7 @@ class SilksongHeader {
   getCurrentPage() {
     const path = window.location.pathname;
     if (path.includes('news')) return 'news';
-    if (path.includes('prices')) return 'prices';
+    if (path.includes('prices')) return 'prices'; // 包括 prices, steam-prices, switch-prices
     if (path.includes('map')) return 'map';
     if (path.includes('media')) return 'media';
     return 'home';
@@ -349,6 +349,8 @@ class SilksongHeader {
     function toZh(p) {
       if (p === '/' || p === '/index.html') return '/zh/';
       if (p === '/prices.html') return '/zh/prices/';
+      if (p === '/steam-prices/' || p === '/steam-prices/index.html') return '/zh/steam-prices/';
+      if (p === '/switch-prices/' || p === '/switch-prices/index.html') return '/zh/switch-prices/';
       if (p === '/map.html') return '/zh/map/';
       if (p === '/media.html') return '/media.html'; // 暂无中文版，保持英文路径
       if (p.startsWith('/news/')) return '/zh' + p;
@@ -359,6 +361,8 @@ class SilksongHeader {
     function toEn(p) {
       if (p === '/zh/' || p === '/zh/index.html') return '/';
       if (p === '/zh/prices/' || p === '/zh/prices/index.html') return '/prices.html';
+      if (p === '/zh/steam-prices/' || p === '/zh/steam-prices/index.html') return '/steam-prices/';
+      if (p === '/zh/switch-prices/' || p === '/zh/switch-prices/index.html') return '/switch-prices/';
       if (p === '/zh/map/' || p === '/zh/map/index.html') return '/map.html';
       if (p === '/zh/media/' || p === '/zh/media/index.html') return '/media.html';
       if (p.startsWith('/zh/news/')) return p.replace('/zh', '');

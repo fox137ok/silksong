@@ -1,0 +1,207 @@
+{
+  "lastUpdated": "2025-09-08T00:12:19.191Z",
+  "dataVersion": "2.0",
+  "gameStatus": "released",
+  "releaseDate": "2025-09-04",
+  "note": "空洞骑士：丝之歌已于2025年9月4日发售。以下为官方Nintendo eShop各地区发售价格。",
+  "regions": [
+    {
+      "region": "US",
+      "regionName": "美国",
+      "currency": "$",
+      "flag": "🇺🇸",
+      "eshop": {
+        "price": 19.99,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.190Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "CA",
+      "regionName": "加拿大",
+      "currency": "CAD$",
+      "flag": "🇨🇦",
+      "eshop": {
+        "price": 27.29,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.190Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "MX",
+      "regionName": "墨西哥",
+      "currency": "MX$",
+      "flag": "🇲🇽",
+      "eshop": {
+        "price": 227.99,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.190Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "BR",
+      "regionName": "巴西",
+      "currency": "R$",
+      "flag": "🇧🇷",
+      "eshop": {
+        "price": 59.99,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "GB",
+      "regionName": "英国",
+      "currency": "£",
+      "flag": "🇬🇧",
+      "eshop": {
+        "price": 16.75,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "DE",
+      "regionName": "德国",
+      "currency": "€",
+      "flag": "🇩🇪",
+      "eshop": {
+        "price": 19.5,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "FR",
+      "regionName": "法国",
+      "currency": "€",
+      "flag": "🇫🇷",
+      "eshop": {
+        "price": 19.5,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "IT",
+      "regionName": "意大利",
+      "currency": "€",
+      "flag": "🇮🇹",
+      "eshop": {
+        "price": 19.5,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "ES",
+      "regionName": "西班牙",
+      "currency": "€",
+      "flag": "🇪🇸",
+      "eshop": {
+        "price": 19.5,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "JP",
+      "regionName": "日本",
+      "currency": "¥",
+      "flag": "🇯🇵",
+      "eshop": {
+        "price": 2300,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://store-jp.nintendo.com/item/software/D70010000020841",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    },
+    {
+      "region": "AU",
+      "regionName": "澳大利亚",
+      "currency": "AUD$",
+      "flag": "🇦🇺",
+      "eshop": {
+        "price": 29.5,
+        "onSale": false,
+        "salePrice": null,
+        "url": "https://www.nintendo.com/store/products/hollow-knight-silksong-switch/",
+        "lastUpdated": "2025-09-08T00:12:19.191Z"
+      },
+      "metadata": {
+        "dataSource": "official",
+        "releaseDate": "2025-09-04",
+        "note": "基于官方发售价格，游戏已于2025年9月4日发售"
+      }
+    }
+  ]
+}

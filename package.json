@@ -1,0 +1,27 @@
+{
+  "name": "silksong-hub-price-fetcher",
+  "version": "1.0.0",
+  "description": "Nintendo eShop price fetcher for Hollow Knight: Silksong",
+  "main": "scripts/fetch-eshop-prices.js",
+  "type": "module",
+  "scripts": {
+    "fetch-prices": "node scripts/fetch-eshop-prices.js",
+    "find-nsuids": "node scripts/find-nsuids.js",
+    "find-silksong": "node scripts/find-silksong.js",
+    "test-api": "node scripts/test-api.js",
+    "quick-test": "node scripts/quick-test.js"
+  },
+  "dependencies": {
+    "nintendo-switch-eshop": "^2.2.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "nintendo",
+    "eshop",
+    "prices",
+    "hollow-knight",
+    "silksong"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -14,12 +14,12 @@
   </script>
 
   <!-- 多语言 Meta Tags -->
-  <title data-zh="Steam地区价格对比 - 空洞骑士：丝之歌最低价购买指南 | Silksong Hub" data-en="Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide | Silksong Hub">Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide | Silksong Hub</title>
+  <title data-zh="平台价格对比 - 空洞骑士：丝之歌最佳购买方案 | Silksong Hub" data-en="Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals | Silksong Hub">Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals | Silksong Hub</title>
   
   <meta name="description" 
-        data-zh="对比空洞骑士：丝之歌在Steam各地区的价格差异。找到最低价地区，节省购买成本，支持汇率换算。"
-        data-en="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals with currency conversion support."
-        content="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals with currency conversion support.">
+        data-zh="对比空洞骑士：丝之歌在Steam和Nintendo Switch平台的价格。找到最低价平台和地区，获得最佳购买方案。"
+        data-en="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices, best deals, and optimal purchase strategies."
+        content="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices, best deals, and optimal purchase strategies.">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://silksonghub.com/prices.html">
@@ -33,13 +33,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://silksonghub.com/prices.html">
   <meta property="og:title" 
-        data-zh="Steam地区价格对比 - 空洞骑士：丝之歌最低价购买指南"
-        data-en="Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide"
-        content="Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide">
+        data-zh="平台价格对比 - 空洞骑士：丝之歌最佳购买方案"
+        data-en="Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals"
+        content="Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals">
   <meta property="og:description" 
-        data-zh="对比空洞骑士：丝之歌在Steam各地区的价格差异。找到最低价地区，节省购买成本。"
-        data-en="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals."
-        content="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals.">
+        data-zh="对比空洞骑士：丝之歌在Steam和Nintendo Switch平台的价格。找到最低价平台和地区。"
+        data-en="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices and best deals."
+        content="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices and best deals.">
   <meta property="og:image" content="https://silksonghub.com/assets/img/hero-slide-1.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -50,13 +50,13 @@
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://silksonghub.com/prices.html">
   <meta property="twitter:title" 
-        data-zh="Steam地区价格对比 - 空洞骑士：丝之歌最低价购买指南"
-        data-en="Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide"
-        content="Steam Regional Price Comparison - Hollow Knight: Silksong Best Deals Guide">
+        data-zh="平台价格对比 - 空洞骑士：丝之歌最佳购买方案"
+        data-en="Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals"
+        content="Platform Price Comparison - Hollow Knight: Silksong Best Gaming Deals">
   <meta property="twitter:description" 
-        data-zh="对比空洞骑士：丝之歌在Steam各地区的价格差异。找到最低价地区，节省购买成本。"
-        data-en="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals."
-        content="Compare Hollow Knight: Silksong prices across Steam regions. Find the lowest prices, save money, and discover the best deals.">
+        data-zh="对比空洞骑士：丝之歌在Steam和Nintendo Switch平台的价格。找到最低价平台和地区。"
+        data-en="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices and best deals."
+        content="Compare Hollow Knight: Silksong prices across Steam and Nintendo Switch platforms. Find the lowest prices and best deals.">
   <meta property="twitter:image" content="https://silksonghub.com/assets/img/hero-slide-1.webp">
   
   <!-- Structured Data -->
@@ -64,19 +64,29 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Hollow Knight: Silksong Steam Regional Price Comparison",
-    "description": "Compare Steam regional game prices to find the best deals",
+    "name": "Hollow Knight: Silksong Platform Price Comparison",
+    "description": "Compare game prices across Steam and Nintendo Switch platforms to find the best deals",
     "url": "https://silksonghub.com/prices.html",
     "mainEntity": {
       "@type": "VideoGame",
       "name": "Hollow Knight: Silksong",
-      "offers": {
+      "offers": [{
         "@type": "AggregateOffer",
+        "@id": "steam-offers",
+        "name": "Steam Platform",
+        "priceCurrency": "USD",
+        "lowPrice": "6.99",
+        "highPrice": "19.99",
+        "availability": "https://schema.org/InStock"
+      }, {
+        "@type": "AggregateOffer",
+        "@id": "switch-offers", 
+        "name": "Nintendo Switch Platform",
         "priceCurrency": "USD",
         "lowPrice": "19.99",
         "highPrice": "19.99",
         "availability": "https://schema.org/InStock"
-      }
+      }]
     },
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -88,7 +98,7 @@
       }, {
         "@type": "ListItem",
         "position": 2,
-        "name": "Steam Price Comparison",
+        "name": "Platform Price Comparison",
         "item": "https://silksonghub.com/prices.html"
       }]
     }
@@ -99,12 +109,12 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="./assets/img/logo.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png?v=2">
   <link rel="alternate icon" href="./favicon.ico">
   
   <!-- Apple Touch Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+  
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
   
   <!-- PWA Manifest -->
@@ -113,9 +123,6 @@
   
   <!-- 预加载关键资源 -->
   <link rel="preload" href="./assets/css/style.css" as="style">
-  
-  <link rel="preload" href="./assets/js/prices.js" as="script">
-  <link rel="preload" href="./data/prices.json" as="fetch" crossorigin="anonymous">
 </head>
 
 <body>
@@ -126,9 +133,9 @@
     <section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-secondary);">
       <div class="container">
         <div class="text-center">
-          <h1 data-zh="🎮 Steam地区价格对比" data-en="🎮 Steam Regional Price Comparison">🎮 Steam Regional Price Comparison</h1>
-          <p class="hero-subtitle" data-zh="对比Steam各地区价格，找到空洞骑士：丝之歌的最优购买方案" data-en="Compare Steam regional prices to find the best deals for Hollow Knight: Silksong">
-            Compare Steam regional prices to find the best deals for Hollow Knight: Silksong
+          <h1 data-zh="🎮 平台价格对比" data-en="🎮 Platform Price Comparison">🎮 Platform Price Comparison</h1>
+          <p class="hero-subtitle" data-zh="对比Steam和Nintendo Switch平台价格，找到空洞骑士：丝之歌的最佳购买方案" data-en="Compare Steam and Nintendo Switch platform prices to find the best deals for Hollow Knight: Silksong">
+            Compare Steam and Nintendo Switch platform prices to find the best deals for Hollow Knight: Silksong
           </p>
         </div>
       </div>
@@ -138,201 +145,189 @@
     <section class="section" style="padding-top: 1rem; padding-bottom: 1rem; background: rgba(217, 76, 131, 0.1);">
       <div class="container">
         <div class="text-center">
-          <p data-zh="🎉 <strong>游戏已发售！</strong>以下是Steam各地区的实际售价，支持实时汇率转换。" data-en="🎉 <strong>Game Released!</strong> Below are the actual Steam regional prices with real-time currency conversion support." style="color: var(--accent); margin-bottom: 0;">
-            🎉 <strong>Game Released!</strong> Below are the actual Steam regional prices with real-time currency conversion support.
+          <p data-zh="🎉 <strong>游戏已发售！</strong>对比Steam和Nintendo Switch平台的最优价格，选择最适合的购买方案。" data-en="🎉 <strong>Game Released!</strong> Compare the best prices on Steam and Nintendo Switch platforms to choose the optimal purchase option." style="color: var(--accent); margin-bottom: 0;">
+            🎉 <strong>Game Released!</strong> Compare the best prices on Steam and Nintendo Switch platforms to choose the optimal purchase option.
           </p>
         </div>
       </div>
     </section>
     
-    <!-- Price Controls -->
-    <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+    <!-- Platform Comparison -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
       <div class="container">
-        <div class="price-controls">
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-              <label for="sort-selector" data-zh="排序方式：" data-en="Sort by:" style="font-weight: 600; color: var(--text);">
-                Sort by:
-              </label>
-              <select id="sort-selector" aria-label="Select sorting method">
-                <option value="price" data-zh="按价格排序" data-en="Sort by Price">Sort by Price</option>
-                <option value="region" data-zh="按地区排序" data-en="Sort by Region">Sort by Region</option>
-                <option value="savings" data-zh="按节省金额排序" data-en="Sort by Savings">Sort by Savings</option>
-              </select>
-              <button id="currency-toggle" data-zh="显示美元价格" data-en="Show USD Prices" style="padding: 0.5rem 1rem; background: var(--accent); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-weight: 600;">
-                Show USD Prices
-              </button>
+        <div class="grid grid-2" style="gap: 2rem;">
+          
+          <!-- Steam Platform Card -->
+          <div class="platform-card" style="background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border); text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #1b2838, #66c0f4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white; font-weight: bold;">S</div>
+              <h2 style="margin: 0; color: var(--text);" data-zh="Steam 平台" data-en="Steam Platform">Steam Platform</h2>
             </div>
+            
+            <div class="price-info" style="margin-bottom: 2rem;">
+              <div style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 0.5rem;" data-zh="最低价格" data-en="Lowest Price">Lowest Price</div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--accent); margin-bottom: 0.5rem;">$6.99</div>
+              <div style="font-size: 0.9rem; color: var(--text-secondary);" data-zh="阿根廷区域 • 节省65%" data-en="Argentina Region • Save 65%">Argentina Region • Save 65%</div>
+            </div>
+            
+            <div class="platform-features" style="margin-bottom: 2rem; text-align: center;">
+              <h4 style="color: var(--accent); margin-bottom: 1rem;" data-zh="平台特点" data-en="Platform Features">Platform Features</h4>
+              <ul style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;" data-zh="支持多地区定价，价格差异大" data-en="Multiple regional pricing, significant price differences">• Multiple regional pricing, significant price differences</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="定期促销活动和季节性折扣" data-en="Regular sales and seasonal discounts">• Regular sales and seasonal discounts</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="成就系统和云端存档" data-en="Achievement system and cloud saves">• Achievement system and cloud saves</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="支持退款政策（2小时内）" data-en="Refund policy support (within 2 hours)">• Refund policy support (within 2 hours)</li>
+              </ul>
+            </div>
+            
+            <a href="./steam-prices/" class="cta-button" style="display: inline-block; padding: 1rem 2rem; background: var(--accent); color: white; text-decoration: none; border-radius: var(--radius); font-weight: 600; transition: all 0.3s ease;" data-zh="查看详细价格" data-en="View Detailed Prices">
+              View Detailed Prices
+            </a>
           </div>
+          
+          <!-- Nintendo Switch Platform Card -->
+          <div class="platform-card" style="background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border); text-align: center;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0066cc, #e60012); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; color: white; font-weight: bold;">N</div>
+              <h2 style="margin: 0; color: var(--text);" data-zh="Nintendo Switch" data-en="Nintendo Switch">Nintendo Switch</h2>
+            </div>
+            
+            <div class="price-info" style="margin-bottom: 2rem;">
+              <div style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 0.5rem;" data-zh="最低价格" data-en="Lowest Price">Lowest Price</div>
+              <div style="font-size: 2rem; font-weight: bold; color: var(--accent); margin-bottom: 0.5rem;">$11.10</div>
+              <div style="font-size: 0.9rem; color: var(--text-secondary);" data-zh="巴西区域 • 节省44%" data-en="Brazil Region • Save 44%">Brazil Region • Save 44%</div>
+            </div>
+            
+            <div class="platform-features" style="margin-bottom: 2rem; text-align: center;">
+              <h4 style="color: var(--accent); margin-bottom: 1rem;" data-zh="平台特点" data-en="Platform Features">Platform Features</h4>
+              <ul style="font-size: 0.9rem; color: var(--text-secondary); margin: 0; list-style: none; padding: 0;">
+                <li style="margin-bottom: 0.5rem;" data-zh="掌机+主机双模式游戏体验" data-en="Handheld + Console dual-mode gaming">• Handheld + Console dual-mode gaming</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="独家任天堂生态系统" data-en="Exclusive Nintendo ecosystem">• Exclusive Nintendo ecosystem</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="便携性强，随时随地游戏" data-en="High portability, gaming anywhere">• High portability, gaming anywhere</li>
+                <li style="margin-bottom: 0.5rem;" data-zh="金币奖励和会员服务" data-en="Gold coins rewards and membership services">• Gold coins rewards and membership services</li>
+              </ul>
+            </div>
+            
+            <a href="./switch-prices/" class="cta-button" style="display: inline-block; padding: 1rem 2rem; background: var(--accent); color: white; text-decoration: none; border-radius: var(--radius); font-weight: 600; transition: all 0.3s ease;" data-zh="查看详细价格" data-en="View Detailed Prices">
+              View Detailed Prices
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+    <!-- Platform Recommendation -->
+    <section class="section" style="background: var(--bg-secondary); padding: 2rem 0;">
+      <div class="container">
+        <div class="text-center mb-2">
+          <h2 data-zh="💡 购买建议" data-en="💡 Purchase Recommendations">💡 Purchase Recommendations</h2>
         </div>
         
-        <!-- Buying Tips -->
-        <div class="text-center mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
-          <h3 data-zh="💡 Steam购买小贴士" data-en="💡 Steam Buying Tips" style="color: var(--accent); margin-bottom: 1.5rem;">💡 Steam Buying Tips</h3>
-          <div class="grid grid-2" style="text-align: left; gap: 2rem;">
-            <div>
-              <h4 data-zh="地区价格差异" data-en="Regional Price Differences" style="margin-bottom: 0.5rem;">Regional Price Differences</h4>
-              <p data-zh="Steam各地区价格差异明显，阿根廷、土耳其、俄罗斯等地区价格较低，最高可节省超过50%。" data-en="Steam regional prices vary significantly. Argentina, Turkey, and Russia offer lower prices, potentially saving you over 50%." style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-                Steam regional prices vary significantly. Argentina, Turkey, and Russia offer lower prices, potentially saving you over 50%.
-              </p>
+        <div class="grid grid-3" style="gap: 2rem;">
+          <div class="card" style="background: var(--bg); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border);">
+            <h3 style="color: var(--accent); margin-bottom: 1rem;" data-zh="💰 追求最低价" data-en="💰 Seeking Lowest Price">💰 Seeking Lowest Price</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;" data-zh="如果你主要关注价格，Steam平台提供更多选择，阿根廷区可节省65%以上费用。" data-en="If price is your main concern, Steam platform offers more options, with Argentina region saving 65%+ costs.">
+              If price is your main concern, Steam platform offers more options, with Argentina region saving 65%+ costs.
+            </p>
+            <div style="background: rgba(217, 76, 131, 0.1); padding: 1rem; border-radius: var(--radius); border-left: 3px solid var(--accent);">
+              <strong data-zh="推荐：Steam (阿根廷区)" data-en="Recommended: Steam (Argentina Region)">Recommended: Steam (Argentina Region)</strong>
             </div>
-            <div>
-              <h4 data-zh="购买注意事项" data-en="Purchase Notes" style="margin-bottom: 0.5rem;">Purchase Notes</h4>
-              <p data-zh="部分地区可能有地区锁定，建议使用VPN购买时注意遵守Steam的使用条款。" data-en="Some regions may have regional locks. When using VPN for purchases, please follow Steam's terms of service." style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-                Some regions may have regional locks. When using VPN for purchases, please follow Steam's terms of service.
-              </p>
+          </div>
+          
+          <div class="card" style="background: var(--bg); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border);">
+            <h3 style="color: var(--accent); margin-bottom: 1rem;" data-zh="🎮 便携游戏体验" data-en="🎮 Portable Gaming Experience">🎮 Portable Gaming Experience</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;" data-zh="如果你重视便携性和独特的掌机体验，Nintendo Switch是更好的选择。" data-en="If you value portability and unique handheld experience, Nintendo Switch is the better choice.">
+              If you value portability and unique handheld experience, Nintendo Switch is the better choice.
+            </p>
+            <div style="background: rgba(217, 76, 131, 0.1); padding: 1rem; border-radius: var(--radius); border-left: 3px solid var(--accent);">
+              <strong data-zh="推荐：Nintendo Switch" data-en="Recommended: Nintendo Switch">Recommended: Nintendo Switch</strong>
+            </div>
+          </div>
+          
+          <div class="card" style="background: var(--bg); border-radius: var(--radius); padding: 1.5rem; border: 1px solid var(--border);">
+            <h3 style="color: var(--accent); margin-bottom: 1rem;" data-zh="⚡ 最佳综合体验" data-en="⚡ Best Overall Experience">⚡ Best Overall Experience</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;" data-zh="考虑性能、功能和社区支持，Steam平台通常提供更完整的PC游戏体验。" data-en="Considering performance, features, and community support, Steam platform usually provides a more complete PC gaming experience.">
+              Considering performance, features, and community support, Steam platform usually provides a more complete PC gaming experience.
+            </p>
+            <div style="background: rgba(217, 76, 131, 0.1); padding: 1rem; border-radius: var(--radius); border-left: 3px solid var(--accent);">
+              <strong data-zh="推荐：Steam (美区)" data-en="Recommended: Steam (US Region)">Recommended: Steam (US Region)</strong>
             </div>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- 价格表格 -->
-    <section class="section" style="padding-top: 1rem;">
+    <!-- Quick Comparison -->
+    <section class="section">
       <div class="container">
-        <!-- Best Deal Banner -->
-        <div id="best-deal-banner" class="text-center mb-2" style="background: linear-gradient(135deg, var(--accent), var(--accent-light)); padding: 1.5rem; border-radius: var(--radius); color: white; display: none;">
-          <h3 data-zh="🏆 最优惠价格" data-en="🏆 Best Deal" style="color: white; margin-bottom: 0.5rem;">🏆 Best Deal</h3>
-          <p id="best-deal-text" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0;"></p>
-        </div>
+        <h2 class="text-center mb-2" data-zh="📊 快速对比" data-en="📊 Quick Comparison">📊 Quick Comparison</h2>
         
         <div class="table-container" style="overflow-x: auto;">
-          <table id="price-table" role="table" aria-label="Steam各地区价格对比">
+          <table style="width: 100%; border-collapse: collapse; background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden;">
             <thead>
-              <tr>
-                <th scope="col" data-zh="地区" data-en="Region" style="width: 120px;">Region</th>
-                <th scope="col" style="width: 140px;">
-                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    <div style="width: 20px; height: 20px; background: linear-gradient(135deg, #1b2838, #66c0f4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: white; font-weight: bold;">S</div>
-                    <span data-zh="Steam价格" data-en="Steam Price">Steam Price</span>
-                  </div>
-                </th>
-                <th scope="col" style="width: 140px;">
-                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    💵 <span data-zh="美元等价" data-en="USD Equivalent">USD Equivalent</span>
-                  </div>
-                </th>
-                <th scope="col" style="width: 140px;">
-                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    💰 <span data-zh="节省金额" data-en="Savings">Savings</span>
-                  </div>
-                </th>
-                <th scope="col" style="width: 120px;">
-                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    🛒 <span data-zh="购买链接" data-en="Buy Link">Buy Link</span>
-                  </div>
-                </th>
+              <tr style="background: var(--accent); color: white;">
+                <th style="padding: 1rem; text-align: left; border: none;" data-zh="对比项目" data-en="Comparison">Comparison</th>
+                <th style="padding: 1rem; text-align: center; border: none;">Steam</th>
+                <th style="padding: 1rem; text-align: center; border: none;">Nintendo Switch</th>
               </tr>
             </thead>
             <tbody>
-              <!-- 价格数据将由JavaScript动态加载 -->
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 1rem; font-weight: 600;" data-zh="最低价格" data-en="Lowest Price">Lowest Price</td>
+                <td style="padding: 1rem; text-align: center; color: var(--accent); font-weight: 600;">$6.99</td>
+                <td style="padding: 1rem; text-align: center;">$11.10</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 1rem; font-weight: 600;" data-zh="地区价格差异" data-en="Regional Price Variance">Regional Price Variance</td>
+                <td style="padding: 1rem; text-align: center; color: var(--success);">✓ Large</td>
+                <td style="padding: 1rem; text-align: center;">✓ Moderate</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 1rem; font-weight: 600;" data-zh="便携性" data-en="Portability">Portability</td>
+                <td style="padding: 1rem; text-align: center;">✗ Desktop Only</td>
+                <td style="padding: 1rem; text-align: center; color: var(--success);">✓ Handheld + TV</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 1rem; font-weight: 600;" data-zh="促销频率" data-en="Sales Frequency">Sales Frequency</td>
+                <td style="padding: 1rem; text-align: center; color: var(--success);">✓ Regular</td>
+                <td style="padding: 1rem; text-align: center;">✗ Rare</td>
+              </tr>
               <tr>
-                <td colspan="5" class="text-center">
-                  <span class="loading" aria-label="加载中"></span>
-                  <span style="margin-left: 0.5rem;" data-zh="正在加载价格数据..." data-en="Loading price data...">正在加载价格数据...</span>
-                </td>
+                <td style="padding: 1rem; font-weight: 600;" data-zh="退款政策" data-en="Refund Policy">Refund Policy</td>
+                <td style="padding: 1rem; text-align: center; color: var(--success);">✓ 2-hour Window</td>
+                <td style="padding: 1rem; text-align: center;">✗ Strict</td>
               </tr>
             </tbody>
           </table>
         </div>
-        
-        <!-- 价格说明 -->
-        <div class="mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
-          <h3 style="margin-bottom: 1.5rem; text-align: center;" data-zh="📋 价格说明" data-en="📋 Price Description">📋 价格说明</h3>
-          <div class="grid grid-2" style="gap: 2rem;">
-            <div>
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="最优价格标识" data-en="Best Price Indicator">最优价格标识</h4>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;" data-zh="标记为粉色的价格是最优惠的价格，节省金额基于美国价格$19.99计算。" data-en="Prices marked in pink are the best deals, with savings calculated based on the US price of $19.99.">
-                标记为<span style="color: var(--accent); font-weight: 600;">粉色</span>的价格是最优惠的价格，节省金额基于美国价格$19.99计算。
-              </p>
-              
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="汇率说明" data-en="Exchange Rate Notes">汇率说明</h4>
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;" data-zh="美元等价价格基于实时汇率计算，可能会有波动。" data-en="USD equivalent prices are calculated based on real-time exchange rates, which may fluctuate.">
-                美元等价价格基于实时汇率计算，可能会有波动。
-              </p>
-            </div>
-            <div>
-              <h4 style="color: var(--accent); margin-bottom: 0.5rem;" data-zh="Steam购买须知" data-en="Steam Purchase Notes">Steam购买须知</h4>
-              <ul style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
-                <li data-zh="某些低价地区可能存在地区锁定限制" data-en="Some low-price regions may have regional lock restrictions">某些低价地区可能存在地区锁定限制</li>
-                <li data-zh="使用VPN时请遵守Steam的服务条款" data-en="Follow Steam's terms of service when using VPN">使用VPN时请遵守Steam的服务条款</li>
-                <li data-zh="Steam支持游戏时长不超过2小时的2小时退款政策" data-en="Steam supports 2-hour refund policy for games under 2 hours playtime">Steam支持游戏时长不超过2小时的2小时退款政策</li>
-                <li data-zh="关注Steam季节性促销和特别活动" data-en="Watch for Steam seasonal sales and special promotions">关注Steam季节性促销和特别活动</li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     
-    <!-- 购买指南 -->
-    <section class="section" style="background: var(--bg-secondary);">
-      <div class="container">
-        <h2 class="text-center mb-2" data-zh="Steam购买指南" data-en="Steam Purchase Guide">Steam购买指南</h2>
-        <div class="grid grid-3">
-          <div class="card">
-            <h3 data-zh="🔍 如何找到最低价格" data-en="🔍 Find the Lowest Price">🔍 如何找到最低价格</h3>
-            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li data-zh="查看上方表格中的最优惠价格" data-en="Check the best deals in the table above">查看上方表格中的最优惠价格</li>
-              <li data-zh="考虑汇率和手续费" data-en="Consider exchange rates and payment fees">考虑汇率和手续费</li>
-              <li data-zh="关注Steam季节性促销" data-en="Watch for Steam seasonal sales">关注Steam季节性促销</li>
-              <li data-zh="加入愿望单以获取降价通知" data-en="Add to wishlist for price drop notifications">加入愿望单以获取降价通知</li>
-            </ol>
-          </div>
-          
-          <div class="card">
-            <h3 data-zh="🌐 跨区购买技巧" data-en="🌐 Regional Purchase Tips">🌐 跨区购买技巧</h3>
-            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li data-zh="选择可靠的VPN服务提供商" data-en="Choose reliable VPN service providers">选择可靠的VPN服务提供商</li>
-              <li data-zh="确保支付方式支持目标地区" data-en="Ensure payment methods support target regions">确保支付方式支持目标地区</li>
-              <li data-zh="了解地区锁定和激活限制" data-en="Understand regional locks and activation restrictions">了解地区锁定和激活限制</li>
-              <li data-zh="保持账号安全，避免频繁更换地区" data-en="Keep account secure, avoid frequent region changes">保持账号安全，避免频繁更换地区</li>
-            </ol>
-          </div>
-          
-          <div class="card">
-            <h3 data-zh="🛑 购买注意事项" data-en="🛑 Purchase Considerations">🛑 购买注意事项</h3>
-            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
-              <li data-zh="验证游戏是否支持你的语言" data-en="Verify game supports your language">验证游戏是否支持你的语言</li>
-              <li data-zh="检查系统要求" data-en="Check system requirements">检查系统要求</li>
-              <li data-zh="了解Steam的退款政策" data-en="Understand Steam's refund policy">了解Steam的退款政策</li>
-              <li data-zh="保存购买记录和收据" data-en="Save purchase records and receipts">保存购买记录和收据</li>
-            </ol>
-          </div>
-        </div>
-        
-        <!-- <div class="text-center mt-2">
-          <a href="news.html" class="cta-button">
-            关注发售动态
-          </a>
-        </div> -->
-      </div>
-    </section>
-    
-    <!-- 常见问题 -->
+    <!-- FAQ -->
     <section class="section">
       <div class="container">
-        <h2 class="text-center mb-2" data-zh="Steam购买常见问题" data-en="Steam Purchase FAQ">Steam购买常见问题</h2>
+        <h2 class="text-center mb-2" data-zh="平台选择常见问题" data-en="Platform Selection FAQ">平台选择常见问题</h2>
         <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);" data-zh="问：为什么各地区价格差异如此之大？" data-en="Q: Why do prices vary so much between regions?">问：为什么各地区价格差异如此之大？</h3>
-            <p style="margin-bottom: 0;" data-zh="答：Steam采用地区定价策略，根据各地区的经济水平和购买力设置不同价格，因此价格差异较大。" data-en="A: Steam uses regional pricing strategies, setting different prices based on each region's economic level and purchasing power, resulting in significant price differences.">答：Steam采用地区定价策略，根据各地区的经济水平和购买力设置不同价格，因此价格差异较大。</p>
+            <h3 style="color: var(--accent);" data-zh="问：Steam和Switch版本有什么区别？" data-en="Q: What's the difference between Steam and Switch versions?">问：Steam和Switch版本有什么区别？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：游戏内容基本相同，主要差异在于Steam支持更高分辨率和帧率，Switch则提供便携性和独特的掌机体验。" data-en="A: Game content is essentially the same, main differences are Steam supports higher resolution and frame rates, while Switch offers portability and unique handheld experience.">答：游戏内容基本相同，主要差异在于Steam支持更高分辨率和帧率，Switch则提供便携性和独特的掌机体验。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);" data-zh="问：使用VPN购买是否会导致封号？" data-en="Q: Will using VPN for purchases result in account bans?">问：使用VPN购买是否会导致封号？</h3>
-            <p style="margin-bottom: 0;" data-zh="答：Steam对VPN购买有一定容忍度，但频繁或恶意更换地区可能有封号风险。请合理使用并遵守相关准则。" data-en="A: Steam has some tolerance for VPN purchases, but frequent or malicious region changes may risk account bans. Use responsibly and follow relevant guidelines.">答：Steam对VPN购买有一定容忍度，但频繁或恶意更换地区可能有封号风险。请合理使用并遵守相关准则。</p>
+            <h3 style="color: var(--accent);" data-zh="问：哪个平台更适合新手？" data-en="Q: Which platform is better for beginners?">问：哪个平台更适合新手？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：如果你重视价格，选择Steam；如果你喜欢简单便携的游戏体验，选择Switch。两个平台都对新手友好。" data-en="A: Choose Steam if you prioritize price; choose Switch if you prefer simple and portable gaming experience. Both platforms are beginner-friendly.">答：如果你重视价格，选择Steam；如果你喜欢简单便携的游戏体验，选择Switch。两个平台都对新手友好。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);" data-zh="问：低价地区的游戏是否有地区锁？" data-en="Q: Do games from low-price regions have regional locks?">问：低价地区的游戏是否有地区锁？</h3>
-            <p style="margin-bottom: 0;" data-zh="答：大部分Steam游戏没有严格的地区锁，但某些游戏可能有运行限制。购买前请查看游戏页面的地区支持信息。" data-en="A: Most Steam games don't have strict regional locks, but some games may have runtime restrictions. Check the game page's regional support information before purchasing.">答：大部分Steam游戏没有严格的地区锁，但某些游戏可能有运行限制。购买前请查看游戏页面的地区支持信息。</p>
+            <h3 style="color: var(--accent);" data-zh="问：Steam跨区购买安全吗？" data-en="Q: Is Steam cross-region purchasing safe?">问：Steam跨区购买安全吗？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：适度的跨区购买通常是安全的，但请遵守Steam服务条款，避免频繁更换地区，并使用可靠的支付方式。" data-en="A: Moderate cross-region purchasing is usually safe, but please follow Steam's terms of service, avoid frequent region changes, and use reliable payment methods.">答：适度的跨区购买通常是安全的，但请遵守Steam服务条款，避免频繁更换地区，并使用可靠的支付方式。</p>
           </div>
           
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="color: var(--accent);" data-zh="问：如何选择最合适的购买地区？" data-en="Q: How to choose the most suitable purchase region?">问：如何选择最合适的购买地区？</h3>
-            <p style="margin-bottom: 0;" data-zh="答：综合考虑价格、支付便利性、地区锁、风险等因素。对于新手，建议选择相对安全的中等价格地区。" data-en="A: Consider factors like price, payment convenience, regional locks, and risks comprehensively. For beginners, we recommend choosing relatively safe moderate-price regions.">答：综合考虑价格、支付便利性、地区锁、风险等因素。对于新手，建议选择相对安全的中等价格地区。</p>
+            <h3 style="color: var(--accent);" data-zh="问：可以在两个平台都购买吗？" data-en="Q: Can I purchase on both platforms?">问：可以在两个平台都购买吗？</h3>
+            <p style="margin-bottom: 0;" data-zh="答：可以，但需要分别购买。如果你经常在不同设备间切换游戏，拥有两个版本可以提供更大的灵活性。" data-en="A: Yes, but you need to purchase separately. If you frequently switch gaming between different devices, having both versions provides greater flexibility.">答：可以，但需要分别购买。如果你经常在不同设备间切换游戏，拥有两个版本可以提供更大的灵活性。</p>
           </div>
           
         </div>
@@ -346,6 +341,5 @@
   <!-- 脚本 -->
   <script src="./assets/js/language.js" defer></script>
   <script src="./assets/js/header.js" defer></script>
-  <script src="./assets/js/prices.js" defer></script>
 </body>
 </html>

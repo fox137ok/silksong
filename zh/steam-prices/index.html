@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z2BZFZX1ZW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-Z2BZFZX1ZW');
+  </script>
+
+  <title>Steam地区价格对比 - 空洞骑士：丝之歌最低价购买指南 | Silksong Hub</title>
+  <meta name="description" content="对比空洞骑士：丝之歌在Steam各地区的价格差异。找到最低价地区，节省购买成本，支持汇率换算。">
+
+  <link rel="canonical" href="https://silksonghub.com/zh/steam-prices/">
+  <link rel="alternate" hreflang="en" href="https://silksonghub.com/steam-prices/">
+  <link rel="alternate" hreflang="zh-CN" href="https://silksonghub.com/zh/steam-prices/">
+  <link rel="alternate" hreflang="x-default" href="https://silksonghub.com/steam-prices/">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png?v=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="../../manifest.json">
+
+  <link rel="preload" href="../../assets/css/style.css" as="style">
+  <link rel="preload" href="../../assets/js/prices.js" as="script">
+  <link rel="preload" href="../../data/prices.json" as="fetch" crossorigin="anonymous">
+</head>
+
+<body>
+  <main role="main">
+    <!-- Page Title Area -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem; background: var(--bg-secondary);">
+      <div class="container">
+        <div class="text-center">
+          <h1>🎮 Steam地区价格对比</h1>
+          <p class="hero-subtitle">对比Steam各地区价格，找到空洞骑士：丝之歌的最优购买方案</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Navigation Breadcrumb -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem; background: rgba(217, 76, 131, 0.05);">
+      <div class="container">
+        <nav aria-label="Breadcrumb" style="font-size: 0.9rem;">
+          <ol style="display: flex; align-items: center; gap: 0.5rem; margin: 0; padding: 0; list-style: none;">
+            <li><a href="/zh/" style="color: var(--accent); text-decoration: none;">首页</a></li>
+            <li style="color: var(--text-secondary);">›</li>
+            <li><a href="/zh/prices/" style="color: var(--accent); text-decoration: none;">价格对比</a></li>
+            <li style="color: var(--text-secondary);">›</li>
+            <li style="color: var(--text);">Steam价格</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+    
+    <!-- Price Notice -->
+    <section class="section" style="padding-top: 1rem; padding-bottom: 1rem; background: rgba(76, 217, 100, 0.1);">
+      <div class="container">
+        <div class="text-center">
+          <p style="color: #4cd964; margin-bottom: 0;">
+            🎉 <strong>游戏已发售！</strong>空洞骑士：丝之歌已于2025年9月4日发售，以下是Steam各地区的官方售价。
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Price Controls -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 1rem;">
+      <div class="container">
+        <div class="price-controls">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+              <label for="sort-selector" style="font-weight: 600; color: var(--text);">排序方式：</label>
+              <select id="sort-selector" aria-label="选择排序方式">
+                <option value="price">按价格排序</option>
+                <option value="region">按地区排序</option>
+                <option value="savings">按节省金额排序</option>
+              </select>
+              <button id="currency-toggle" style="padding: 0.5rem 1rem; background: var(--accent); color: white; border: none; border-radius: var(--radius); cursor: pointer; font-weight: 600;">
+                显示美元价格
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Buying Tips -->
+        <div class="text-center mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <h3 style="color: var(--accent); margin-bottom: 1.5rem;">💡 Steam购买小贴士</h3>
+          <div class="grid grid-2" style="text-align: left; gap: 2rem;">
+            <div>
+              <h4 style="margin-bottom: 0.5rem;">地区价格差异</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                Steam各地区价格差异明显，阿根廷、土耳其、俄罗斯等地区价格较低，最高可节省超过50%。
+              </p>
+            </div>
+            <div>
+              <h4 style="margin-bottom: 0.5rem;">购买注意事项</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                部分地区可能有地区锁定，建议使用VPN购买时注意遵守Steam的使用条款。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 价格表格 -->
+    <section class="section" style="padding-top: 1rem;">
+      <div class="container">
+        <!-- Best Deal Banner -->
+        <div id="best-deal-banner" class="text-center mb-2" style="background: linear-gradient(135deg, var(--accent), var(--accent-light)); padding: 1.5rem; border-radius: var(--radius); color: white; display: none;">
+          <h3 style="color: white; margin-bottom: 0.5rem;">🏆 最优惠价格</h3>
+          <p id="best-deal-text" style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0;"></p>
+        </div>
+        
+        <div class="table-container" style="overflow-x: auto;">
+          <table id="price-table" role="table" aria-label="Steam各地区价格对比">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 120px;">地区</th>
+                <th scope="col" style="width: 140px;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                    <div style="width: 20px; height: 20px; background: linear-gradient(135deg, #1b2838, #66c0f4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; color: white; font-weight: bold;">S</div>
+                    <span>Steam价格</span>
+                  </div>
+                </th>
+                <th scope="col" style="width: 140px;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">💵 <span>美元等价</span></div>
+                </th>
+                <th scope="col" style="width: 140px;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">💰 <span>节省金额</span></div>
+                </th>
+                <th scope="col" style="width: 120px;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">🛒 <span>购买链接</span></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="5" class="text-center">
+                  <span class="loading" aria-label="加载中"></span>
+                  <span style="margin-left: 0.5rem;">正在加载价格数据...</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- 价格说明 -->
+        <div class="mt-2" style="background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border);">
+          <h3 style="margin-bottom: 1.5rem; text-align: center;">📋 价格说明</h3>
+          <div class="grid grid-2" style="gap: 2rem;">
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">最优价格标识</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                标记为<span style="color: var(--accent); font-weight: 600;">粉色</span>的价格是最优惠的价格，节省金额基于美国价格$19.99计算。
+              </p>
+              
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">汇率说明</h4>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                美元等价价格基于实时汇率计算，可能会有波动。
+              </p>
+            </div>
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Steam购买须知</h4>
+              <ul style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0;">
+                <li>某些低价地区可能存在地区锁定限制</li>
+                <li>使用VPN时请遵守Steam的服务条款</li>
+                <li>Steam支持游戏时长不超过2小时的2小时退款政策</li>
+                <li>关注Steam季节性促销和特别活动</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 购买指南 -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <h2 class="text-center mb-2">Steam购买指南</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>🔍 如何找到最低价格</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>查看上方表格中的最优惠价格</li>
+              <li>考虑汇率和手续费</li>
+              <li>关注Steam季节性促销</li>
+              <li>加入愿望单以获取降价通知</li>
+            </ol>
+          </div>
+          
+          <div class="card">
+            <h3>🌐 跨区购买技巧</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>选择可靠的VPN服务提供商</li>
+              <li>确保支付方式支持目标地区</li>
+              <li>了解地区锁定和激活限制</li>
+              <li>保持账号安全，避免频繁更换地区</li>
+            </ol>
+          </div>
+          
+          <div class="card">
+            <h3>🛑 购买注意事项</h3>
+            <ol style="font-size: 0.9rem; color: var(--text-secondary);">
+              <li>验证游戏是否支持你的语言</li>
+              <li>检查系统要求</li>
+              <li>了解Steam的退款政策</li>
+              <li>保存购买记录和收据</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 常见问题 -->
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center mb-2">Steam购买常见问题</h2>
+        <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">问：为什么各地区价格差异如此之大？</h3>
+            <p style="margin-bottom: 0;">答：Steam采用地区定价策略，根据各地区的经济水平和购买力设置不同价格，因此价格差异较大。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">问：使用VPN购买是否会导致封号？</h3>
+            <p style="margin-bottom: 0;">答：Steam对VPN购买有一定容忍度，但频繁或恶意更换地区可能有封号风险。请合理使用并遵守相关准则。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">问：低价地区的游戏是否有地区锁？</h3>
+            <p style="margin-bottom: 0;">答：大部分Steam游戏没有严格的地区锁，但某些游戏可能有运行限制。购买前请查看游戏页面的地区支持信息。</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 1rem;">
+            <h3 style="color: var(--accent);">问：如何选择最合适的购买地区？</h3>
+            <p style="margin-bottom: 0;">答：综合考虑价格、支付便利性、地区锁、风险等因素。对于新手，建议选择相对安全的中等价格地区。</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- Footer将由JavaScript动态插入 -->
+  
+  <!-- 脚本 -->
+  <script src="/assets/js/language.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/prices.js" defer></script>
+</body>
+</html>
