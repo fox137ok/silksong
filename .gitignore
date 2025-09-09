@@ -13,7 +13,6 @@ TODO.md
 assets/img/README.md
 
 # 脚本和工具（包含业务逻辑，不公开）
-scripts/
 tools/
 check-prices.py
 
