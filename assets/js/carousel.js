@@ -36,8 +36,10 @@ class HeroCarousel {
       return;
     }
 
-    // 预加载背景图片
-    this.preloadImages();
+    // 预取管理结构（用于在离开页面时取消）
+    this.preloadTimers = new Set();
+    this.idleCallbacks = new Set();
+    this.preloaded = new Set();
 
     // 绑定事件
     this.bindEvents();
@@ -47,21 +49,96 @@ class HeroCarousel {
 
     // 设置初始状态
     this.updateSlide(0);
+
+    // 按需加载当前与下一张，避免一次性并发所有大图
+    this.ensureSlideBg(0);
+    this.preloadNext(0);
   }
 
-  preloadImages() {
-    // 预加载所有轮播图片以提升性能
-    this.slides.forEach((slide, index) => {
-      const bgImage = slide.dataset.bg;
-      // 跳过第一张幻灯片，因为它使用img元素来优化LCP
-      if (bgImage && index !== 0) {
-        const img = new Image();
-        img.onload = () => {
-          slide.style.backgroundImage = `url(${bgImage})`;
-        };
-        img.src = bgImage;
-      }
-    });
+  // 仅在需要时为某张幻灯片设置背景图
+  ensureSlideBg(index) {
+    const slide = this.slides[index];
+    if (!slide) return;
+
+    // 第一张有 img（优化 LCP），不必再设背景
+    if (slide.querySelector('img.carousel-bg-image')) return;
+
+    const bg = slide.dataset.bg;
+    if (!bg) return;
+    if (slide.dataset.bgLoaded === '1' || slide.style.backgroundImage) return;
+
+    const img = new Image();
+    try { img.decoding = 'async'; } catch (_) {}
+    if ('fetchPriority' in img) {
+      try { img.fetchPriority = 'low'; } catch (_) {}
+    }
+    img.onload = () => {
+      slide.style.backgroundImage = `url(${bg})`;
+      slide.dataset.bgLoaded = '1';
+    };
+    img.onerror = () => {
+      slide.dataset.bgLoaded = '1';
+    };
+
+    const run = () => { img.src = bg; };
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(run, { timeout: 1500 });
+      this.idleCallbacks.add(id);
+    } else {
+      const t = setTimeout(run, 300);
+      this.preloadTimers.add(t);
+    }
+  }
+
+  // 低优先级仅预取下一张，避免占满首屏带宽
+  preloadNext(currentIndex) {
+    if (!this.slides || this.slides.length === 0) return;
+    const nextIndex = (currentIndex + 1) % this.slides.length;
+    if (this.preloaded.has(nextIndex)) return;
+
+    const slide = this.slides[nextIndex];
+    if (!slide) return;
+
+    const bg = slide.dataset.bg;
+    if (!bg) return;
+
+    // 已加载过或已有背景时跳过
+    if (slide.dataset.bgLoaded === '1' || slide.style.backgroundImage) {
+      this.preloaded.add(nextIndex);
+      return;
+    }
+
+    const img = new Image();
+    try { img.decoding = 'async'; } catch (_) {}
+    if ('fetchPriority' in img) {
+      try { img.fetchPriority = 'low'; } catch (_) {}
+    }
+    img.onload = () => {
+      // 不直接设置背景，等真正切到该页时再设，避免首次渲染开销
+      this.preloaded.add(nextIndex);
+    };
+    img.onerror = () => {
+      this.preloaded.add(nextIndex);
+    };
+
+    const run = () => { img.src = bg; };
+    if (typeof requestIdleCallback === 'function') {
+      const id = requestIdleCallback(run, { timeout: 2000 });
+      this.idleCallbacks.add(id);
+    } else {
+      const t = setTimeout(run, 500);
+      this.preloadTimers.add(t);
+    }
+  }
+
+  cancelPendingPreloads() {
+    // 取消所有未决的预取任务
+    for (const t of this.preloadTimers) clearTimeout(t);
+    this.preloadTimers.clear();
+    if (typeof cancelIdleCallback === 'function') {
+      for (const id of this.idleCallbacks) cancelIdleCallback(id);
+    }
+    this.idleCallbacks.clear();
   }
 
   bindEvents() {
@@ -131,9 +208,15 @@ class HeroCarousel {
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         this.pauseAutoPlay();
+        this.cancelPendingPreloads();
       } else if (this.isPlaying) {
         this.startAutoPlay();
       }
+    });
+
+    // 页面离开时取消未决预取，避免占用导航时的带宽
+    window.addEventListener('pagehide', () => {
+      this.cancelPendingPreloads();
     });
 
     // 窗口尺寸变化时重新计算
@@ -212,6 +295,10 @@ class HeroCarousel {
       }
     });
     document.dispatchEvent(slideChangeEvent);
+
+    // 按需加载当前背景，并低优先级预取下一张
+    this.ensureSlideBg(index);
+    this.preloadNext(index);
   }
 
   nextSlide() {
@@ -307,6 +394,7 @@ class HeroCarousel {
   // 销毁轮播（清理资源）
   destroy() {
     this.clearAutoPlay();
+    this.cancelPendingPreloads();
     
     // 移除事件监听器
     if (this.prevBtn) this.prevBtn.removeEventListener('click', this.previousSlide);
