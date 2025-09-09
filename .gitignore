@@ -1,0 +1,61 @@
+# ===========================================
+# Silksong Hub - Git忽略文件配置
+# ===========================================
+
+# 内部文档和操作指南（不上传到网络）
+PRICE_UPDATE_GUIDE.md
+NEWS_CONTENT_GUIDE.md
+README_INTERNAL.md
+NOTES.md
+TODO.md
+更新价格指南.md
+运行说明.md
+assets/img/README.md
+
+# 脚本和工具（包含业务逻辑，不公开）
+scripts/
+tools/
+check-prices.py
+
+# Claude AI 配置文件
+.claude/
+*.claude
+
+# Node.js 相关
+node_modules/
+package-lock.json
+.npm
+
+# 环境变量和配置
+.env
+.env.local
+.env.production
+config.local.js
+
+# 系统和编辑器文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+.vscode/
+.idea/
+
+# 日志和临时文件
+*.log
+*.tmp
+*.temp
+logs/
+tmp/
+
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 开发时的测试数据
+test-data/
+mock-data/
