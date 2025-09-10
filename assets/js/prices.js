@@ -93,7 +93,10 @@ class SteamPriceManager {
 
   updateCurrencyToggleText() {
     if (this.currencyToggle) {
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       this.currencyToggle.textContent = this.showUSD ? 
         (isZH ? '显示本地价格' : 'Show Local Prices') : 
         (isZH ? '显示美元价格' : 'Show USD Prices');
@@ -232,7 +235,12 @@ class SteamPriceManager {
         this.render();
       });
     }
-
+    
+    // 监听语言切换事件，重新渲染表格
+    document.addEventListener('languageChanged', () => {
+      console.log('Language changed, re-rendering Steam price table');
+      this.render();
+    });
   }
 
   sortData(data, sortBy) {
@@ -281,17 +289,23 @@ class SteamPriceManager {
         `$${priceUSD.toFixed(2)}` : 
         `${item.currency}${this.formatPrice(item.steam.price)}`;
       
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       const savingsText = savings > 0 ? 
         `${isZH ? '节省' : 'Save'} $${savings.toFixed(2)}` : 
         (isZH ? '无节省' : 'No savings');
       
       return `
         <tr ${isLowest ? 'class="lowest-price-row"' : ''}>
-          <td>
-            <strong style="color: ${isLowest ? 'var(--accent)' : 'var(--text)'}">
-              ${this.getRegionName(item.region)}
-            </strong>
+          <td style="text-align: center;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+              ${item.flag ? `<span>${item.flag}</span>` : ''}
+              <strong style="color: ${isLowest ? 'var(--accent)' : 'var(--text)'}">
+                ${this.getRegionName(item.region)}
+              </strong>
+            </div>
           </td>
           <td class="${isLowest ? 'lowest' : ''}" style="font-weight: 600;">
             ${displayPrice}
@@ -343,7 +357,12 @@ class SteamPriceManager {
   }
 
   getRegionName(region) {
-    const isZH = document.documentElement.lang.startsWith('zh');
+    // 使用更可靠的语言检测方式
+    const currentLang = document.documentElement.dataset.lang || 
+                       document.documentElement.lang || 
+                       (window.languageManager ? window.languageManager.currentLang : 'en');
+    const isZH = currentLang === 'zh-CN';
+    
     const regionNames = {
       'US': isZH ? '美国' : 'United States',
       'CN': isZH ? '中国' : 'China',
@@ -364,7 +383,10 @@ class SteamPriceManager {
 
   showLoading() {
     if (this.tableBody) {
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       this.tableBody.innerHTML = `
         <tr>
           <td colspan="5" class="text-center">

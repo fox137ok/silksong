@@ -81,18 +81,27 @@ class SilksongHeader {
   createFooter() {
     const footer = document.createElement('footer');
     footer.className = 'site-footer';
+    
+    // 根据当前路径和语言设置决定初始显示的文本
+    const isZh = window.location.pathname.startsWith('/zh/') || 
+                document.documentElement.dataset.lang === 'zh-CN' ||
+                document.documentElement.lang === 'zh-CN';
+    
+    const footerText = isZh ? "© 2025 silksonghub.com — 粉丝网站，与 Team Cherry 无关联" : "© 2025 silksonghub.com — Fan site, not affiliated with Team Cherry";
+    const disclaimerText = isZh ? "本站内容仅供参考，具体信息以官方发布为准" : "Content is for reference only, official information takes precedence";
+    
     footer.innerHTML = `
       <div class="footer-content">
         <div class="footer-info">
           <p class="footer-text" 
              data-zh="© 2025 silksonghub.com — 粉丝网站，与 Team Cherry 无关联"
              data-en="© 2025 silksonghub.com — Fan site, not affiliated with Team Cherry">
-            © 2025 silksonghub.com — 粉丝网站，与 Team Cherry 无关联
+            ${footerText}
           </p>
           <p class="footer-disclaimer" 
              data-zh="本站内容仅供参考，具体信息以官方发布为准"
              data-en="Content is for reference only, official information takes precedence">
-            本站内容仅供参考，具体信息以官方发布为准
+            ${disclaimerText}
           </p>
         </div>
         
@@ -144,6 +153,14 @@ class SilksongHeader {
     if (!existingFooter) {
       const footer = this.createFooter();
       document.body.appendChild(footer);
+      
+      // 如果语言管理器已经存在，立即更新页脚的语言显示
+      if (window.languageManager) {
+        // 等待下一个事件循环，确保DOM已更新
+        setTimeout(() => {
+          window.languageManager.updateAllElements();
+        }, 0);
+      }
     }
   }
 

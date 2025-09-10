@@ -2,6 +2,7 @@
   {
     "region": "US",
     "currency": "$",
+    "flag": "🇺🇸",
     "steam": {
       "price": 19.99,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/"
@@ -10,6 +11,7 @@
   {
     "region": "AR",
     "currency": "$",
+    "flag": "🇦🇷",
     "steam": {
       "price": 6.99,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=ar"
@@ -18,6 +20,7 @@
   {
     "region": "TR",
     "currency": "$",
+    "flag": "🇹🇷",
     "steam": {
       "price": 7.99,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=tr"
@@ -26,6 +29,7 @@
   {
     "region": "BR",
     "currency": "R$",
+    "flag": "🇧🇷",
     "steam": {
       "price": 59.99,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=br"
@@ -34,6 +38,7 @@
   {
     "region": "RU",
     "currency": "₽",
+    "flag": "🇷🇺",
     "steam": {
       "price": 710.00,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=ru"
@@ -42,6 +47,7 @@
   {
     "region": "IN",
     "currency": "₹",
+    "flag": "🇮🇳",
     "steam": {
       "price": 880.00,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=in"
@@ -50,6 +56,7 @@
   {
     "region": "CN",
     "currency": "¥",
+    "flag": "🇨🇳",
     "steam": {
       "price": 76.00,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=cn"
@@ -58,6 +65,7 @@
   {
     "region": "EU",
     "currency": "€",
+    "flag": "🇪🇺",
     "steam": {
       "price": 19.50,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=de"
@@ -66,6 +74,7 @@
   {
     "region": "UK",
     "currency": "£",
+    "flag": "🇬🇧",
     "steam": {
       "price": 16.75,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=gb"
@@ -74,6 +83,7 @@
   {
     "region": "JP",
     "currency": "¥",
+    "flag": "🇯🇵",
     "steam": {
       "price": 2300,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=jp"
@@ -82,6 +92,7 @@
   {
     "region": "KR",
     "currency": "₩",
+    "flag": "🇰🇷",
     "steam": {
       "price": 21500,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=kr"
@@ -90,6 +101,7 @@
   {
     "region": "MX",
     "currency": "Mex$",
+    "flag": "🇲🇽",
     "steam": {
       "price": 227.99,
       "url": "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/?cc=mx"

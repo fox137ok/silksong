@@ -96,7 +96,10 @@ class SwitchPriceManager {
 
   updateCurrencyToggleText() {
     if (this.currencyToggle) {
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       this.currencyToggle.textContent = this.showUSD ? 
         (isZH ? '显示本地价格' : 'Show Local Prices') : 
         (isZH ? '显示美元价格' : 'Show USD Prices');
@@ -240,6 +243,12 @@ class SwitchPriceManager {
         this.render();
       });
     }
+    
+    // 监听语言切换事件，重新渲染表格
+    document.addEventListener('languageChanged', () => {
+      console.log('Language changed, re-rendering Switch price table');
+      this.render();
+    });
   }
 
   sortData(data, sortBy) {
@@ -288,15 +297,18 @@ class SwitchPriceManager {
         `$${priceUSD.toFixed(2)}` : 
         `${item.currency}${this.formatPrice(item.eshop.price)}`;
       
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       const savingsText = savings > 0 ? 
         `${isZH ? '节省' : 'Save'} $${savings.toFixed(2)}` : 
         (isZH ? '无节省' : 'No savings');
       
       return `
         <tr ${isLowest ? 'class="lowest-price-row"' : ''}>
-          <td>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <td style="text-align: center;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
               ${item.flag ? `<span>${item.flag}</span>` : ''}
               <strong style="color: ${isLowest ? 'var(--accent)' : 'var(--text)'}">
                 ${this.getRegionName(item.region, item.regionName)}
@@ -357,12 +369,12 @@ class SwitchPriceManager {
   }
 
   getRegionName(region, regionName = null) {
-    // Use regionName from data if available
-    if (regionName) {
-      return regionName;
-    }
+    // 使用更可靠的语言检测方式
+    const currentLang = document.documentElement.dataset.lang || 
+                       document.documentElement.lang || 
+                       (window.languageManager ? window.languageManager.currentLang : 'en');
+    const isZH = currentLang === 'zh-CN';
     
-    const isZH = document.documentElement.lang.startsWith('zh');
     const regionNames = {
       'US': isZH ? '美国' : 'United States',
       'CA': isZH ? '加拿大' : 'Canada',
@@ -381,12 +393,16 @@ class SwitchPriceManager {
       'HK': isZH ? '香港' : 'Hong Kong'
     };
     
+    // 优先使用语言转换后的名称，而不是数据中的regionName
     return regionNames[region] || region;
   }
 
   showLoading() {
     if (this.tableBody) {
-      const isZH = document.documentElement.lang.startsWith('zh');
+      const currentLang = document.documentElement.dataset.lang || 
+                         document.documentElement.lang || 
+                         (window.languageManager ? window.languageManager.currentLang : 'en');
+      const isZH = currentLang === 'zh-CN';
       this.tableBody.innerHTML = `
         <tr>
           <td colspan="5" class="text-center">
