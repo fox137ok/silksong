@@ -4,7 +4,7 @@ class SilksongHeader {
     this.currentPage = this.getCurrentPage();
     // 功能开关：可在此隐藏未上线的菜单项
     this.features = {
-      news: false,
+      news: true,
       media: false,
     };
     this.init();

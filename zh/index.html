@@ -321,6 +321,63 @@
       </div>
     </section>
 
+    <!-- 最新动态区 -->
+    <section class="latest-news" aria-labelledby="news-title">
+      <div class="container">
+        <h2 id="news-title" class="section-title">最新动态</h2>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/assets/img/metacritic-scores-update-thumb.webp" alt="《空洞骑士：丝之歌》Metacritic评分解禁" loading="lazy">
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <time datetime="2025-09-12">2025.09.12</time>
+              </div>
+              <h3 class="news-title">
+                《空洞骑士：丝之歌》Metacritic评分解禁，各平台获得优异评价
+              </h3>
+              <p class="news-summary">
+                《空洞骑士：丝之歌》Metacritic评分解禁，PC版93分、PS5版92分、Switch2版90分，多家媒体给出满分但也有争议。
+              </p>
+              <div class="read-more-wrapper">
+                <a href="/zh/news/2025/09/metacritic-scores-update/" class="read-more">
+                  阅读全文 <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="news-card">
+            <div class="news-image">
+              <img src="/assets/img/first-patch-reduces-difficulty-thumb.webp" alt="《空洞骑士：丝之歌》首个补丁降低游戏难度" loading="lazy">
+            </div>
+            <div class="news-content">
+              <div class="news-meta">
+                <time datetime="2025-09-09">2025.09.09</time>
+              </div>
+              <h3 class="news-title">
+                《空洞骑士：丝之歌》首个补丁降低游戏难度，回应玩家反馈
+              </h3>
+              <p class="news-summary">
+                Team Cherry发布《空洞骑士：丝之歌》首个补丁，降低早期Boss难度并改善游戏经济系统，回应玩家关于游戏过难的反馈。
+              </p>
+              <div class="read-more-wrapper">
+                <a href="/zh/news/2025/09/first-patch-reduces-difficulty/" class="read-more">
+                  阅读全文 <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a href="/zh/news/" class="cta-button secondary">
+            <span>查看所有新闻</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- 发售庆祝区 -->
     <section class="release-celebration">
       <div class="container">
@@ -336,5 +393,20 @@
   <script src="/assets/js/header.js" defer></script>
   <script src="/assets/js/carousel.js" defer></script>
   <script src="/assets/js/language.js" defer></script>
+  <script>
+    // 仅保留最新2条“最新动态”新闻卡片（按 time[datetime] 倒序）
+    document.addEventListener('DOMContentLoaded', function() {
+      const grid = document.querySelector('.latest-news .news-grid');
+      if (!grid) return;
+      const cards = Array.from(grid.querySelectorAll('.news-card'));
+      if (cards.length <= 2) return;
+      const sorted = cards.sort((a, b) => {
+        const ad = a.querySelector('time')?.getAttribute('datetime') || '';
+        const bd = b.querySelector('time')?.getAttribute('datetime') || '';
+        return new Date(bd) - new Date(ad);
+      });
+      sorted.slice(2).forEach(card => card.remove());
+    });
+  </script>
 </body>
 </html>
